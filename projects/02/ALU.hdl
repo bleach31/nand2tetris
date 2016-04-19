@@ -46,14 +46,14 @@ CHIP ALU {
    // if (zx == 1) set x = 0        // 16-bit constant
    // Not16 (in[0]=zx,in[1]=zx,in[0]=zx,..15]=zx,out=notzx16);// all0/all1
    // And16 (a=x,b=notzx16,out=x1);
-   Mux16(a=x,b[0..15]=false,sel=zx,out=x1);
+   Mux16(a=x,b=false,sel=zx,out=x1); // muxでxかALL0を選択
    
    // if (nx == 1) set x = !x       // bitwise not
    Not16(in=x1,out=x1not);
    Mux16(a=x1,b=x1not,sel=nx,out=x2);
    
    // if (zy == 1) set y = 0        // 16-bit constant
-   Mux16(a=y,b[0..15]=false,sel=zy,out=y1);
+   Mux16(a=y,b=false,sel=zy,out=y1);
    // if (ny == 1) set y = !y       // bitwise not
    Not16(in=y1,out=y1not);
    Mux16(a=y1,b=y1not,sel=ny,out=y2);
@@ -66,19 +66,18 @@ CHIP ALU {
    
    // if (no == 1) set out = !out   // bitwise not
    Not16(in=fout,out=foutnot);
-   Mux16(a=fout,b=foutnot,sel=no,out=noout,out[0..7]=nooutF,out[8..15]=nooutR,out[15]=nooutT);//point
+   Mux16(a=fout,b=foutnot,sel=no,out=out,out[0..7]=nooutF,out[8..15]=nooutR,out[15]=msb);
+											//受け取る側の変数で配列？を使えないので、渡す側に書く
+											//前半8bit、後半8bit、MSBを用意する
    
    // if (out == 0) set zr = 1
-   Or8Way(in=nooutF,out=front);
+   Or8Way(in=nooutF,out=front);		//Nor16wayがあれば一発
    Or8Way(in=nooutR,out=rear);
    Or(a=front,b=rear,out=zrnot);
    Not(in=zrnot,out=zr);
    
    // if (out < 0) set ng = 1
-   Not(in=nooutT,out=ngnot);
-   Not(in=ngnot,out=ng);
+   Not(in=msb,out=ngnot);		//2の歩数だと最上位bitが1のときは負数なので最上位BITを返せばOK
+   Not(in=ngnot,out=ng);		//そのまま帰す論理回路がわかんないのでNot→Not
    
-   //Add:noout=out
-   Not16(in=noout,out=noutnot);
-   Not16(in=noutnot,out=out);
 }
