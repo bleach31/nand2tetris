@@ -66,9 +66,9 @@ CHIP ALU {
    
    // if (no == 1) set out = !out   // bitwise not
    Not16(in=fout,out=foutnot);
-   Mux16(a=fout,b=foutnot,sel=no,out=out,out[0..7]=nooutF,out[8..15]=nooutR,out[15]=msb);
+   Mux16(a=fout,b=foutnot,sel=no,out=out,out[0..7]=nooutF,out[8..15]=nooutR,out[15]=ng);
 											//受け取る側の変数で配列？を使えないので、渡す側に書く
-											//前半8bit、後半8bit、MSBを用意する
+											//前半8bit、後半8bitを用意、MSBをngとして出力
    
    // if (out == 0) set zr = 1
    Or8Way(in=nooutF,out=front);		//Nor16wayがあれば一発
@@ -77,7 +77,6 @@ CHIP ALU {
    Not(in=zrnot,out=zr);
    
    // if (out < 0) set ng = 1
-   Not(in=msb,out=ngnot);		//2の歩数だと最上位bitが1のときは負数なので最上位BITを返せばOK
-   Not(in=ngnot,out=ng);		//そのまま帰す論理回路がわかんないのでNot→Not
+   // outのMSB = ng　として出力済み
    
 }
