@@ -39,5 +39,73 @@ CHIP CPU {
         pc[15];          // address of next instruction
 
     PARTS:
-    // Put your code here:
+    // Put your code here:ARegister,DRegister,ALU
+	
+	//decode
+	Not16(in=instruction,out=Notinstruction);
+	Not16(in=Notinstruction,
+		out[15]=ctrlI,
+		out[12]=ctrlA,
+		out[11]=ctrlC1,
+		out[10]=ctrlC2,
+		out[9]=ctrlC3,
+		out[8]=ctrlC4,
+		out[7]=ctrlC5,
+		out[6]=ctrlC6,
+		out[5]=ctrlD1,
+		out[4]=ctrlD2,
+		out[3]=ctrlD3,
+		out[2]=ctrlJ1,
+		out[1]=ctrlJ2,
+		out[0]=ctrlJ3
+		);	
+	////////////////////////////////////////////////
+		
+	
+	//制御aビットによりALUへの入力を選択する.a=0ならA,a=1ならD
+	Mux16(a=Aout,b=inM,sel=ctrlA,out=ALUin);
+	
+	ALU(x=Dout,y=ALUin,
+	zx=ctrlC1,
+	nx=ctrlC2,
+	zy=ctrlC3,
+	ny=ctrlC4,
+	f=ctrlC5,
+	no=ctrlC6,
+	out=ALUout,out=outM,
+	zr=ZRout,	//ゼロの時１
+	ng=NGout	//負の時１
+	);
+	
+	//制御dビットによりALUoutの書き込み先を選択する
+		//A命令の時はinstructionをAレジスタに入れるのでOrを取っていれる。
+		Mux16(a=instruction, b=ALUout, sel=ctrlI, out=ARegin);
+		Not(in=ctrlI,out=Ainst);
+		Or(a=Ainst,b=ctrlD1,out=Aload);
+		ARegister(in=ARegin, load=Aload, out=Aout,out[0..14]=addressM);
+		//Dレジスタ
+		And(a=ctrlD2,b=ctrlI,out=Dload);
+		DRegister(in=ALUout, load=Dload, out=Dout);
+		//メモリ書き込み　そもそもA命令なら書き込まない
+		And(a=ctrlD3,b=ctrlI,out=writeM);
+	
+	//
+	////////////////////////////////////////////////
+		
+	//j1が立ってて計算結果も負→ジャンプ
+	And(a=ctrlJ1,b=NGout,out=jump1);
+	//j2が立ってて計算結果がゼロ→ジャンプ
+	And(a=ctrlJ2,b=ZRout,out=jump2);
+	//j3が立ってて計算結果が正（NGout=0かつZRout＝０）→ジャンプ
+	Not(in=NGout,out=PGout);
+	Not(in=ZRout,out=NotZRout);
+	And(a=ctrlJ3,b=PGout,out=temp);
+	And(a=temp,b=NotZRout,out=jump3);
+	//ジャンプフラグのOR,そもそもA命令ならジャンプしない
+	Or8Way(in[0]=jump1,in[1]=jump2,in[2]=jump3,in[4..7]=false,out=jump);
+	//ただし,そもそもA命令ならジャンプしない
+	And(a=jump,b=ctrlI,out=PCload);
+	
+    PC(in=Aout, load=PCload, inc=true, reset=reset, out[0..14]=pc);
+	
 }

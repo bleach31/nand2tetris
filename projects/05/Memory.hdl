@@ -25,7 +25,20 @@
 CHIP Memory {
     IN in[16], load, address[15];
     OUT out[16];
-
+	
     PARTS:
     // Put your code here:
+	
+	//メモリ		0x0000-0x3FFF	0BBBB
+	//スクリーン		0x4000-0x5FFF	10BBB....
+	//キーボード	0x6000			1100...00
+	
+	DMux4Way(in=load,sel=address[13..14],a=loadRam1,b=loadRam2,c=loadScreen,d=loadKeyboard);
+	Or(a=loadRam1, b=loadRam2, out=loadRam);
+	RAM16K(in=in,load=loadRam,address=address[0..13],out=outRam); 
+	Screen(in=in,load=loadScreen,address=address[0..12],out=outScreen);
+	Keyboard(out=outKeyboard);
+
+	Mux4Way16(a=outRam,b=outRam,c=outScreen,d=outKeyboard,sel=address[13..14],out=out);
+	
 }
