@@ -60,8 +60,7 @@ CHIP CPU {
 		out[0]=ctrlJ3
 		);	
 	////////////////////////////////////////////////execute
-		
-	
+
 	//制御aビットによりALUへの入力を選択する.a=0ならA,a=1ならD
 	Mux16(a=Aout,b=inM,sel=ctrlA,out=ALUin);
 	
@@ -92,15 +91,15 @@ CHIP CPU {
 	//
 	////////////////////////////////////////////////fetch
 		
-	//j1が立ってて計算結果も負→ジャンプ
+	//j1が立ってて計算結果も負→ジャンプ1
 	And(a=ctrlJ1,b=NGout,out=jump1);
-	//j2が立ってて計算結果がゼロ→ジャンプ
+	//j2が立ってて計算結果がゼロ→ジャンプ2
 	And(a=ctrlJ2,b=ZRout,out=jump2);
-	//j3が立ってて計算結果が正（NGout=0かつZRout＝０）→ジャンプ
+	//j3が立ってて計算結果が正（NGout=0かつZRout＝0）→ジャンプ3
 	Not(in=NGout,out=PGout);
 	Not(in=ZRout,out=NotZRout);
 	And(a=ctrlJ3,b=PGout,out=temp);
-	And(a=temp,b=NotZRout,out=jump3);W
+	And(a=temp,b=NotZRout,out=jump3);
 	//ジャンプ1~3のOR
 	Or8Way(in[0]=jump1,in[1]=jump2,in[2]=jump3,in[4..7]=false,out=jump);
 	//ただし,そもそもA命令ならジャンプしない
