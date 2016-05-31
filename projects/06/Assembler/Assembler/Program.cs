@@ -1,27 +1,107 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
 namespace Assembler
 {
-	class Program
-	{
-		static void Main(string[] args)
-		{
-			String filepath1 = @"C:\Users\10001176180\Documents\16FY_教育研修\コンピュータ実装教育\nand2tetris\projects\06\add\Add.asm";
-			String filepath2 = @"C:\Users\10001176180\Documents\16FY_教育研修\コンピュータ実装教育\nand2tetris\projects\06\max\Max.asm";
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            String inputpath = Path.GetFullPath(args[0]);
+            String outputpath = Path.GetFileNameWithoutExtension(inputpath) + ".hack";
 
-			String filepath3 = Console.ReadLine();
+            StreamWriter outputwriter = new StreamWriter(outputpath);//, Encoding.UTF8);
+            Parser prs = new Parser(inputpath);
 
-			Parser test = new Parser(filepath3);
-			while (test.hasMoreCommands())
-			{
-				Console.WriteLine("{0} \t\t {1},{2},{3},{4},{5}", test.line, test.commandtype, test.symbol, test.comp, test.dest, test.jump);
-			}
-			// Suspend the screen.
-			Console.ReadLine();
-		}
-	}
+            int romAddress = 0;
+            while (prs.hasMoreCommands())
+            {
+                switch (prs.commandtype)
+                {
+                    case Parser.commandtypes.A_COMMAND:
+                    case Parser.commandtypes.C_COMMAND:
+                        romAddress++;
+                        break;
+                    case Parser.commandtypes.L_COMMAND:
+                        SymbolTable.addEntry(prs.symbol, romAddress);
+                        break;
+                    default:
+                        break;
+                }
+            }
+
+            prs.rewind();
+
+            int ramAddress = 16;
+            while (prs.hasMoreCommands())
+            {
+
+                String line = "";
+                switch (prs.commandtype)
+                {
+                    case Parser.commandtypes.A_COMMAND:
+                        Int16 number;
+                        //直値の時。string -> int16 -> 2進数 -> 15桁にパディング　の流れ
+                        if (Int16.TryParse(prs.symbol, out number))
+                        {
+                            line = "0" + Convert.ToString(number, 2).PadLeft(15, '0');
+                        }
+                        //ラベルシンボルの時。symbolDictは10進intなので2進数stringに変換
+                        else if (SymbolTable.symbolDict.ContainsKey(prs.symbol))
+                        {
+                            line = "0" + (Convert.ToString(SymbolTable.symbolDict[prs.symbol],2)).PadLeft(15, '0');
+                        }
+                        //変数の時
+                        else
+                        {
+                            SymbolTable.addEntry(prs.symbol, ramAddress);
+                            line = "0" + (Convert.ToString(ramAddress,2)).PadLeft(15, '0');
+                            ramAddress++;
+                        }
+
+
+                        outputwriter.WriteLine(line);
+                        break;
+                    case Parser.commandtypes.C_COMMAND:
+                        line = "111" + Code.compDict[prs.comp] + Code.destDict[prs.dest] + Code.jumpDict[prs.jump];
+                        outputwriter.WriteLine(line);
+                        break;
+                    case Parser.commandtypes.L_COMMAND:
+                        break;
+                    default:
+                        break;
+                }
+                
+            }
+
+            outputwriter.Close();
+            prs.close();
+        }
+
+
+
+        /// <summary>
+        /// 10進数のintかstringを2進数のStringして返す
+        /// </summary>
+        /// <param name="str"></param>
+        /// <param name="totalWidth">桁数</param>
+        /// <returns>digit桁の2進数のString、変換できないときは空</returns>
+        /*
+        static string ToBinaryString(object input, int totalWidth)// where T : Object
+        {
+            //string -> int(10進) -> int(2進) -> 15桁にパディング　の流れ
+            int deci;
+            if (input.GetType == typeof(String))
+            {
+                deci = int.Parse(input);
+            }
+
+
+            return "";
+        }*/
+    }
 }

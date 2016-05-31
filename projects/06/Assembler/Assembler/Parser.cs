@@ -46,7 +46,7 @@ namespace Assembler
 		/// </summary>
 		/// <returns></returns>
 		public String jump { get; set; }
-		enum commandtypes
+        public enum commandtypes
 		{
 			A_COMMAND, C_COMMAND, L_COMMAND, OTHER
 		}
@@ -60,8 +60,6 @@ namespace Assembler
 			m_file = new FileStream(filepath,FileMode.Open);
 			m_file_reader = new StreamReader(m_file);
 
-			//ファイルの先頭から読み始める
-			m_file.Seek(0,SeekOrigin.Begin);
 		}
 
 		/// <summary>
@@ -89,7 +87,7 @@ namespace Assembler
 				//		\wだと日本語をラベルに使えるのでむしろ上位互換
 
 				//A命令
-				r = new Regex(@"^@([\w]+)$");
+				r = new Regex(@"^@([^;=\(\)]+)$");
 				Match m = r.Match(line);
 				if(m.Success)
 				{
@@ -97,9 +95,9 @@ namespace Assembler
 					commandtype = commandtypes.A_COMMAND;
 					return true;
 				}
-				
-				//C命令
-				r = new Regex(@"^(([^;=]+)=)?([^;=]+)(;([^;=]+))?$");
+
+                //C命令 
+                r = new Regex(@"^(([^;=\(\)]+)=)?([^;=\(\)]+)(;([^;=\(\)]+))?$");
 				m = r.Match(line);
 				if (m.Success)
 				{
@@ -113,7 +111,7 @@ namespace Assembler
 				}
 				
 				//ラベルシンボル
-				r = new Regex(@"^(\w+)$");
+				r = new Regex(@"^\(([^;=\(\)]+)\)$");
 				m = r.Match(line);
 				if (m.Success) {
 					symbol = m.Groups[1].Value;
@@ -123,6 +121,17 @@ namespace Assembler
 			}
 			return false;
 		}
-		
+        /// <summary>
+        /// ファイルの先頭へ戻る
+        /// </summary>
+        public void rewind()
+        {
+            m_file.Seek(0, SeekOrigin.Begin);
+        }
+
+        public void close() {
+            m_file_reader.Close();
+            m_file.Close();
+        }
 	}
 }
