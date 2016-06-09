@@ -22,7 +22,7 @@ M=D
 A=M-1
 D=M
 @R13
-D=M+D
+D=D+M
 @SP
 A=M-1
 M=D
