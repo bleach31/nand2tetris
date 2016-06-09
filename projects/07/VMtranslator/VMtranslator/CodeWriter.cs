@@ -143,33 +143,37 @@ namespace VMtranslator
 			if (command == VMtranslator.Parser.CommandTypes.C_PUSH)
 			{
 				//データをDにロードする
-				List<string> memMappedSegments = new List<string>(){"local","argument","this","that","pointer","temp"}; 
-				if (memMappedSegments.Contains(segment))
-				{
-					//segmentの値がそのままマップされてないので変換
-					if (segment.Equals("local")) segment = "LCL";
-					if (segment.Equals("argument")) segment = "ARG";
-					if (segment.Equals("pointer")) segment = "3";
-					if (segment.Equals("temp")) segment = "5";
-					else segment = segment.ToUpper();
+				List<string> memInAdressSegments = new List<string>(){"local","argument","this","that"};
+                List<string> memMappedSegments = new List<string>() { "pointer", "temp" };
+                if (memInAdressSegments.Contains(segment))
+                {
+                    //segmentの値がそのまま使えないので変換
+                    if (segment.Equals("local")) segment = "LCL";
+                    if (segment.Equals("argument")) segment = "ARG";
+                    else segment = segment.ToUpper();
 
-
-					m_file_writer.WriteLine("@" + segment);
-					m_file_writer.WriteLine("D=A");		//D = ベースアドレス
-					m_file_writer.WriteLine("@" + index);
-					m_file_writer.WriteLine("A=D+A");	//A = ベースアドレス + インデックス
-					m_file_writer.WriteLine("D=M");		//D = M[base + index]
-				}
-				else if (segment.Equals("constant"))
-				{
-					m_file_writer.WriteLine("@" + index);
-					m_file_writer.WriteLine("D=A");		// D = index
-				}
-				else if (segment.Equals("static")) 
-				{
-					m_file_writer.WriteLine("@" + m_filenamewithoutExtention + "."+ index);	//Aにラベルのアドレスを入れる
-					m_file_writer.WriteLine("D=M");		//D = M[ラベルのアドレス]
-				}
+                    m_file_writer.WriteLine("@" + segment);
+                    m_file_writer.WriteLine("D=M");     //D = M[segment] =ベースアドレス
+                    m_file_writer.WriteLine("@" + index);
+                    m_file_writer.WriteLine("A=D+A");   //A = ベースアドレス + インデックス
+                    m_file_writer.WriteLine("D=M");     //D = M[base + index]
+                } else if (memMappedSegments.Contains(segment)) {
+                    int adress = 0;
+                    if (segment.Equals("pointer")) adress = 3+index;
+                    if (segment.Equals("temp")) adress = 5 + index;
+                    m_file_writer.WriteLine("@" + adress);
+                    m_file_writer.WriteLine("D=M");     //D = M[base + index]
+                }
+                else if (segment.Equals("constant"))
+                {
+                    m_file_writer.WriteLine("@" + index);
+                    m_file_writer.WriteLine("D=A");     // D = index
+                }
+                else if (segment.Equals("static"))
+                {
+                    m_file_writer.WriteLine("@" + m_filenamewithoutExtention + "." + index);    //Aにラベルのアドレスを入れる
+                    m_file_writer.WriteLine("D=M");     //D = M[ラベルのアドレス]
+                }
 
 				//スタックにDをロードする
 				m_file_writer.WriteLine("@SP");
@@ -190,54 +194,61 @@ namespace VMtranslator
 				//スタックからDに読みだす
 				m_file_writer.WriteLine("@SP");
 				m_file_writer.WriteLine("A=M");	// A = M[SP]
-				m_file_writer.WriteLine("D=M");	// D = M[M[SP]]
+				m_file_writer.WriteLine("D=M"); // D = M[M[SP]]
 
-				//データをDから所定の場所へロードする。　Dは使えないので注意
-				List<string> memMappedSegments = new List<string>() { "local", "argument", "this", "that", "pointer", "temp" };
-				if (memMappedSegments.Contains(segment))
-				{
-					//segmentの値がそのままマップされてないので変換
-					if (segment.Equals("local")) segment = "LCL";
-					if (segment.Equals("argument")) segment = "ARG";
-					if (segment.Equals("pointer")) segment = "3";
-					if (segment.Equals("temp")) segment = "5";
-					else segment = segment.ToUpper();
+                //データをDから所定の場所へロードする。　Dは使えないので注意
+                List<string> memInAdressSegments = new List<string>() { "local", "argument", "this", "that" };
+                List<string> memMappedSegments = new List<string>() { "pointer", "temp" };
+                if (memInAdressSegments.Contains(segment))
+                {
+                    //segmentの値がそのままマップされてないので変換
+                    if (segment.Equals("local")) segment = "LCL";
+                    if (segment.Equals("argument")) segment = "ARG";
+                    else segment = segment.ToUpper();
 
-					//すごく冗長になってしまった。M[base+index] = Dがしたいだけ。
-					//segment -> base addressを持っといてindexをこの場で加算が早い
-					//DをM[R13]に退避
-					m_file_writer.WriteLine("@R13");
-					m_file_writer.WriteLine("M=D");	//M[R13]=D
+                    //すごく冗長になってしまった。D= M[segment]+index がしたいだけ。
+                    //segment -> base addressを持っといてindexをこの場で加算が早い
+                    //DをM[R13]に退避
+                    m_file_writer.WriteLine("@R13");
+                    m_file_writer.WriteLine("M=D"); //M[R13]=D
 
-					//書き込み先アドレスの作成
-					m_file_writer.WriteLine("@" + segment);
-					m_file_writer.WriteLine("D=A");		//D = ベースアドレス
-					m_file_writer.WriteLine("@" + index);
-					m_file_writer.WriteLine("D=D+A");	//D = ベースアドレス + インデックス
+                    //書き込み先アドレスの作成
+                    m_file_writer.WriteLine("@" + segment);
+                    m_file_writer.WriteLine("D=M");     //D = M[segment]
+                    m_file_writer.WriteLine("@" + index);
+                    m_file_writer.WriteLine("D=D+A");   //D = ベースアドレス + インデックス
 
-					//書き込み先アドレスをR14に退避
-					m_file_writer.WriteLine("@R14");
-					m_file_writer.WriteLine("M=D");		//M[R14]=D(base + index)
+                    //書き込み先アドレスをR14に退避
+                    m_file_writer.WriteLine("@R14");
+                    m_file_writer.WriteLine("M=D");     //M[R14]=D(base + index)
 
-					//Dに書き込む値を入れる
-					m_file_writer.WriteLine("@R13");
-					m_file_writer.WriteLine("M=D");		//D=M[R13]
+                    //Dに書き込む値を入れる
+                    m_file_writer.WriteLine("@R13");
+                    m_file_writer.WriteLine("D=M");     //D=M[R13]
 
-					//Aにアドレスを入れる
-					m_file_writer.WriteLine("@R14");
-					//書き込む
-					m_file_writer.WriteLine("M=D");		//M[base + index] = D
+                    //Aにアドレスを入れる
+                    m_file_writer.WriteLine("@R14");
+                    m_file_writer.WriteLine("A=M");     //A=M[R14]
+                    //書き込む
+                    m_file_writer.WriteLine("M=D");     //M[base + index] = D
 
-				}
-				else if (segment.Equals("constant"))
-				{
-					//即値にDを入れるなんてありえない。読み捨てる用途？
-				}
-				else if (segment.Equals("static"))
-				{
-					m_file_writer.WriteLine("@" + m_filenamewithoutExtention + "." + index);	// @ラベル　A ← ラベルのアドレス
-					m_file_writer.WriteLine("M=D");		//M[ラベルのアドレス] = D
-				}
+                } else if (memMappedSegments.Contains(segment))
+                {
+                    int adress = 0;
+                    if (segment.Equals("pointer")) adress = 3 + index;
+                    if (segment.Equals("temp")) adress = 5 + index;
+                    m_file_writer.WriteLine("@" + adress);
+                    m_file_writer.WriteLine("M=D");     //M[base + index]=D
+                }
+                else if (segment.Equals("constant"))
+                {
+                    //即値にDを入れるなんてありえない。読み捨てる用途？
+                }
+                else if (segment.Equals("static"))
+                {
+                    m_file_writer.WriteLine("@" + m_filenamewithoutExtention + "." + index);    // @ラベル　A ← ラベルのアドレス
+                    m_file_writer.WriteLine("M=D");     //M[ラベルのアドレス] = D
+                }
 			}
 		}
 
