@@ -220,7 +220,7 @@ namespace VMtranslator
 
                     //書き込み先アドレスをR14に退避
                     m_file_writer.WriteLine("@R14");
-                    m_file_writer.WriteLine("M=D");     //M[R14]=D(base + index)
+                    m_file_writer.WriteLine("M=D");     //M[R14]= D = ベースアドレス + インデックス
 
                     //Dに書き込む値を入れる
                     m_file_writer.WriteLine("@R13");
