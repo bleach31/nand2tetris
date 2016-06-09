@@ -45,14 +45,15 @@ D=M
 @R13
 M=D
 @ARG
-D=A
+D=M
 @2
 D=D+A
 @R14
 M=D
 @R13
-M=D
+D=M
 @R14
+A=M
 M=D
 @SP
 M=M-1
