@@ -71,8 +71,45 @@ namespace VMtranslator
 					{
 						commandtype = CommandTypes.C_POP;
 						return true;
-					}
-				}
+                    }
+                    else if (command.Contains("label"))
+                    {
+                        commandtype = CommandTypes.C_LABEL;
+                        //
+                        return true;
+                    }
+                    else if (command.Contains("if-goto"))
+                    {
+                        commandtype = CommandTypes.C_IF;
+                        //
+                        return true;
+                    }
+                    else if (command.Contains("goto"))
+                    {
+                        commandtype = CommandTypes.C_GOTO;
+                        //
+                        return true;
+                    }
+                    else if (command.Contains("function"))
+                    {
+                        commandtype = CommandTypes.C_FUNCTION;
+                        //
+                        //
+                        return true;
+                    }
+                    else if (command.Contains("return"))
+                    {
+                        commandtype = CommandTypes.C_RETURN;
+                        return true;
+                    }
+                    else if (command.Contains("call"))
+                    {
+                        commandtype = CommandTypes.C_CALL;
+                        //
+                        //
+                        return true;
+                    }
+                }
 			}
 			return false;
 		}
