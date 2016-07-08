@@ -23,10 +23,6 @@ namespace VMtranslator
 			m_FunctionName = Path.GetFileNameWithoutExtension(filepath);
 			m_file_writer = new StreamWriter(filepath);
 
-
-			/// sys.vmがある場合だけ必要
-			//WriteInit();
-
 		}
 
 		public void close() {
@@ -34,6 +30,8 @@ namespace VMtranslator
 		}
 
 		/// <summary>
+		/// Sys.vmがある場合だけ実行すること。
+		/// SPの初期化とエントリーポイントの設定を行う。
 		/// </summary>
 		public void WriteInit()
 		{
@@ -42,7 +40,8 @@ namespace VMtranslator
 			myWriter("@SP");
 			myWriter("M=D");
 
-			writeGoto("Sys.init");
+			myWriter("@Sys.init");
+			myWriter("0;JMP");
 		}
 
 

@@ -25,13 +25,23 @@ namespace VMtranslator
 			//vmfiles.Add(@"C:\Users\c2010\Documents\git\nand2tetris\projects\08\ProgramFlow\BasicLoop\BasicLoop.vm");
 			//vmfiles.Add(@"C:\Users\c2010\Documents\git\nand2tetris\projects\08\ProgramFlow\FibonacciSeries\FibonacciSeries.vm");
 
-			String dir = @"C:\Users\c2010\Documents\git\nand2tetris\projects\08\FunctionCalls\SimpleFunction";
+			String dir = @"C:\github\nand2tetris\projects\07\MemoryAccess\PointerTest";
 			//指定フォルダのvmファイルを全部とってくる。サブフォルダはみない。
 			string[] files = System.IO.Directory.GetFiles(dir, "*.vm", System.IO.SearchOption.TopDirectoryOnly);
 			
 			String outputpath = dir +"\\" +Path.GetFileName(dir)+".asm";
 			CodeWriter cw = new CodeWriter(outputpath);
 
+			//もしSys.vmがあればWriteInitを呼ぶ
+			foreach(String filepath in files)
+			{
+				if(filepath.EndsWith("Sys.vm"))
+				{
+					cw.WriteInit();
+				}
+					
+			}
+			//
 			for (int i = 0; i < files.Length; i++)
 			{
 				String inputpath = files[i];

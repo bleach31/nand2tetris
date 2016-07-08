@@ -1,154 +1,154 @@
-@3030
-D=A
-@SP
-A=M
-M=D
-@SP
-M=M+1
-@SP
-M=M-1
-@SP
-A=M
-D=M
-@3
-M=D
-@3040
-D=A
-@SP
-A=M
-M=D
-@SP
-M=M+1
-@SP
-M=M-1
-@SP
-A=M
-D=M
-@4
-M=D
-@32
-D=A
-@SP
-A=M
-M=D
-@SP
-M=M+1
-@SP
-M=M-1
-@SP
-A=M
-D=M
-@R13
-M=D
-@THIS
-D=M
-@2
-D=D+A
-@R14
-M=D
-@R13
-D=M
-@R14
-A=M
-M=D
-@46
-D=A
-@SP
-A=M
-M=D
-@SP
-M=M+1
-@SP
-M=M-1
-@SP
-A=M
-D=M
-@R13
-M=D
-@THAT
-D=M
-@6
-D=D+A
-@R14
-M=D
-@R13
-D=M
-@R14
-A=M
-M=D
-@3
-D=M
-@SP
-A=M
-M=D
-@SP
-M=M+1
-@4
-D=M
-@SP
-A=M
-M=D
-@SP
-M=M+1
-@SP
-M=M-1
-A=M
-D=M
-@R13
-M=D
-@SP
-A=M-1
-D=M
-@R13
-D=D+M
-@SP
-A=M-1
-M=D
-@THIS
-D=M
-@2
-A=D+A
-D=M
-@SP
-A=M
-M=D
-@SP
-M=M+1
-@SP
-M=M-1
-A=M
-D=M
-@R13
-M=D
-@SP
-A=M-1
-D=M
-@R13
-D=D-M
-@SP
-A=M-1
-M=D
-@THAT
-D=M
-@6
-A=D+A
-D=M
-@SP
-A=M
-M=D
-@SP
-M=M+1
-@SP
-M=M-1
-A=M
-D=M
-@R13
-M=D
-@SP
-A=M-1
-D=M
-@R13
-D=D+M
-@SP
-A=M-1
-M=D
+@3030			//#0000	<-	writePushPop	<-	Main
+D=A			//#0001	<-	writePushPop	<-	Main
+@SP			//#0002	<-	writePushPop	<-	Main
+A=M			//#0003	<-	writePushPop	<-	Main
+M=D			//#0004	<-	writePushPop	<-	Main
+@SP			//#0005	<-	writePushPop	<-	Main
+M=M+1			//#0006	<-	writePushPop	<-	Main
+@SP			//#0007	<-	writePushPop	<-	Main
+M=M-1			//#0008	<-	writePushPop	<-	Main
+@SP			//#0009	<-	writePushPop	<-	Main
+A=M			//#0010	<-	writePushPop	<-	Main
+D=M			//#0011	<-	writePushPop	<-	Main
+@3			//#0012	<-	writePushPop	<-	Main
+M=D			//#0013	<-	writePushPop	<-	Main
+@3040			//#0014	<-	writePushPop	<-	Main
+D=A			//#0015	<-	writePushPop	<-	Main
+@SP			//#0016	<-	writePushPop	<-	Main
+A=M			//#0017	<-	writePushPop	<-	Main
+M=D			//#0018	<-	writePushPop	<-	Main
+@SP			//#0019	<-	writePushPop	<-	Main
+M=M+1			//#0020	<-	writePushPop	<-	Main
+@SP			//#0021	<-	writePushPop	<-	Main
+M=M-1			//#0022	<-	writePushPop	<-	Main
+@SP			//#0023	<-	writePushPop	<-	Main
+A=M			//#0024	<-	writePushPop	<-	Main
+D=M			//#0025	<-	writePushPop	<-	Main
+@4			//#0026	<-	writePushPop	<-	Main
+M=D			//#0027	<-	writePushPop	<-	Main
+@32			//#0028	<-	writePushPop	<-	Main
+D=A			//#0029	<-	writePushPop	<-	Main
+@SP			//#0030	<-	writePushPop	<-	Main
+A=M			//#0031	<-	writePushPop	<-	Main
+M=D			//#0032	<-	writePushPop	<-	Main
+@SP			//#0033	<-	writePushPop	<-	Main
+M=M+1			//#0034	<-	writePushPop	<-	Main
+@SP			//#0035	<-	writePushPop	<-	Main
+M=M-1			//#0036	<-	writePushPop	<-	Main
+@SP			//#0037	<-	writePushPop	<-	Main
+A=M			//#0038	<-	writePushPop	<-	Main
+D=M			//#0039	<-	writePushPop	<-	Main
+@R13			//#0040	<-	writePushPop	<-	Main
+M=D			//#0041	<-	writePushPop	<-	Main
+@THIS			//#0042	<-	writePushPop	<-	Main
+D=M			//#0043	<-	writePushPop	<-	Main
+@2			//#0044	<-	writePushPop	<-	Main
+D=D+A			//#0045	<-	writePushPop	<-	Main
+@R14			//#0046	<-	writePushPop	<-	Main
+M=D			//#0047	<-	writePushPop	<-	Main
+@R13			//#0048	<-	writePushPop	<-	Main
+D=M			//#0049	<-	writePushPop	<-	Main
+@R14			//#0050	<-	writePushPop	<-	Main
+A=M			//#0051	<-	writePushPop	<-	Main
+M=D			//#0052	<-	writePushPop	<-	Main
+@46			//#0053	<-	writePushPop	<-	Main
+D=A			//#0054	<-	writePushPop	<-	Main
+@SP			//#0055	<-	writePushPop	<-	Main
+A=M			//#0056	<-	writePushPop	<-	Main
+M=D			//#0057	<-	writePushPop	<-	Main
+@SP			//#0058	<-	writePushPop	<-	Main
+M=M+1			//#0059	<-	writePushPop	<-	Main
+@SP			//#0060	<-	writePushPop	<-	Main
+M=M-1			//#0061	<-	writePushPop	<-	Main
+@SP			//#0062	<-	writePushPop	<-	Main
+A=M			//#0063	<-	writePushPop	<-	Main
+D=M			//#0064	<-	writePushPop	<-	Main
+@R13			//#0065	<-	writePushPop	<-	Main
+M=D			//#0066	<-	writePushPop	<-	Main
+@THAT			//#0067	<-	writePushPop	<-	Main
+D=M			//#0068	<-	writePushPop	<-	Main
+@6			//#0069	<-	writePushPop	<-	Main
+D=D+A			//#0070	<-	writePushPop	<-	Main
+@R14			//#0071	<-	writePushPop	<-	Main
+M=D			//#0072	<-	writePushPop	<-	Main
+@R13			//#0073	<-	writePushPop	<-	Main
+D=M			//#0074	<-	writePushPop	<-	Main
+@R14			//#0075	<-	writePushPop	<-	Main
+A=M			//#0076	<-	writePushPop	<-	Main
+M=D			//#0077	<-	writePushPop	<-	Main
+@3			//#0078	<-	writePushPop	<-	Main
+D=M			//#0079	<-	writePushPop	<-	Main
+@SP			//#0080	<-	writePushPop	<-	Main
+A=M			//#0081	<-	writePushPop	<-	Main
+M=D			//#0082	<-	writePushPop	<-	Main
+@SP			//#0083	<-	writePushPop	<-	Main
+M=M+1			//#0084	<-	writePushPop	<-	Main
+@4			//#0085	<-	writePushPop	<-	Main
+D=M			//#0086	<-	writePushPop	<-	Main
+@SP			//#0087	<-	writePushPop	<-	Main
+A=M			//#0088	<-	writePushPop	<-	Main
+M=D			//#0089	<-	writePushPop	<-	Main
+@SP			//#0090	<-	writePushPop	<-	Main
+M=M+1			//#0091	<-	writePushPop	<-	Main
+@SP			//#0092	<-	writeArithmetic	<-	Main
+M=M-1			//#0093	<-	writeArithmetic	<-	Main
+A=M			//#0094	<-	writeArithmetic	<-	Main
+D=M			//#0095	<-	writeArithmetic	<-	Main
+@R13			//#0096	<-	writeArithmetic	<-	Main
+M=D			//#0097	<-	writeArithmetic	<-	Main
+@SP			//#0098	<-	writeArithmetic	<-	Main
+A=M-1			//#0099	<-	writeArithmetic	<-	Main
+D=M			//#0100	<-	writeArithmetic	<-	Main
+@R13			//#0101	<-	writeArithmetic	<-	Main
+D=D+M			//#0102	<-	writeArithmetic	<-	Main
+@SP			//#0103	<-	writeArithmetic	<-	Main
+A=M-1			//#0104	<-	writeArithmetic	<-	Main
+M=D			//#0105	<-	writeArithmetic	<-	Main
+@THIS			//#0106	<-	writePushPop	<-	Main
+D=M			//#0107	<-	writePushPop	<-	Main
+@2			//#0108	<-	writePushPop	<-	Main
+A=D+A			//#0109	<-	writePushPop	<-	Main
+D=M			//#0110	<-	writePushPop	<-	Main
+@SP			//#0111	<-	writePushPop	<-	Main
+A=M			//#0112	<-	writePushPop	<-	Main
+M=D			//#0113	<-	writePushPop	<-	Main
+@SP			//#0114	<-	writePushPop	<-	Main
+M=M+1			//#0115	<-	writePushPop	<-	Main
+@SP			//#0116	<-	writeArithmetic	<-	Main
+M=M-1			//#0117	<-	writeArithmetic	<-	Main
+A=M			//#0118	<-	writeArithmetic	<-	Main
+D=M			//#0119	<-	writeArithmetic	<-	Main
+@R13			//#0120	<-	writeArithmetic	<-	Main
+M=D			//#0121	<-	writeArithmetic	<-	Main
+@SP			//#0122	<-	writeArithmetic	<-	Main
+A=M-1			//#0123	<-	writeArithmetic	<-	Main
+D=M			//#0124	<-	writeArithmetic	<-	Main
+@R13			//#0125	<-	writeArithmetic	<-	Main
+D=D-M			//#0126	<-	writeArithmetic	<-	Main
+@SP			//#0127	<-	writeArithmetic	<-	Main
+A=M-1			//#0128	<-	writeArithmetic	<-	Main
+M=D			//#0129	<-	writeArithmetic	<-	Main
+@THAT			//#0130	<-	writePushPop	<-	Main
+D=M			//#0131	<-	writePushPop	<-	Main
+@6			//#0132	<-	writePushPop	<-	Main
+A=D+A			//#0133	<-	writePushPop	<-	Main
+D=M			//#0134	<-	writePushPop	<-	Main
+@SP			//#0135	<-	writePushPop	<-	Main
+A=M			//#0136	<-	writePushPop	<-	Main
+M=D			//#0137	<-	writePushPop	<-	Main
+@SP			//#0138	<-	writePushPop	<-	Main
+M=M+1			//#0139	<-	writePushPop	<-	Main
+@SP			//#0140	<-	writeArithmetic	<-	Main
+M=M-1			//#0141	<-	writeArithmetic	<-	Main
+A=M			//#0142	<-	writeArithmetic	<-	Main
+D=M			//#0143	<-	writeArithmetic	<-	Main
+@R13			//#0144	<-	writeArithmetic	<-	Main
+M=D			//#0145	<-	writeArithmetic	<-	Main
+@SP			//#0146	<-	writeArithmetic	<-	Main
+A=M-1			//#0147	<-	writeArithmetic	<-	Main
+D=M			//#0148	<-	writeArithmetic	<-	Main
+@R13			//#0149	<-	writeArithmetic	<-	Main
+D=D+M			//#0150	<-	writeArithmetic	<-	Main
+@SP			//#0151	<-	writeArithmetic	<-	Main
+A=M-1			//#0152	<-	writeArithmetic	<-	Main
+M=D			//#0153	<-	writeArithmetic	<-	Main
