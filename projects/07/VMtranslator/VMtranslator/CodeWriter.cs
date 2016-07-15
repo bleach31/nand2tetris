@@ -12,15 +12,27 @@ namespace VMtranslator
 	class CodeWriter
 	{
 		StreamWriter m_file_writer;
-		string m_FunctionName;
+
+		/// <summary>
+		/// クラス名.関数名の形
+		/// </summary>
+		string m_InputClassDotFunctionName;
+
+		/// <summary>
+		/// クラス名のみ
+		/// </summary>
+		string m_InputClassName;
+
 		/// <summary>
 		/// 出力ファイル/ストリームを開きパースを行う準備をする
 		/// </summary>
-		/// <param name="file">入力ファイルパス</param>
+		/// <param name="file">出力ファイルパス</param>
 		public CodeWriter(String filepath)
 		{
 			callnum = 0;
-			m_FunctionName = Path.GetFileNameWithoutExtension(filepath);
+			//単一ファイルの場合は、クラス名と関数名を同じ、アセンブリ名にする
+			m_InputClassDotFunctionName = Path.GetFileNameWithoutExtension(filepath);
+			m_InputClassName = m_InputClassDotFunctionName;
 			m_file_writer = new StreamWriter(filepath);
 
 		}
@@ -91,47 +103,47 @@ namespace VMtranslator
 				case "eq":
 					myWriter("@R13");
 					myWriter("D=D-M");	//D= x - y
-					myWriter("@" + m_FunctionName + "_EQ_TRUE_CALL"+callnum);	
+					myWriter("@" + m_InputClassDotFunctionName + "_EQ_TRUE_CALL" + callnum);	
 					myWriter("D;JEQ");	//if D==0 jump
 					//偽の場合
 					myWriter("D=0");		//D= false 
-					myWriter("@" + m_FunctionName + "_EQ_END_CALL" + callnum);	
+					myWriter("@" + m_InputClassDotFunctionName + "_EQ_END_CALL" + callnum);	
 					myWriter("0;JMP");	//無条件ジャンプ
 					//真の場合
-					myWriter("(" + m_FunctionName + "_EQ_TRUE_CALL" + callnum + ")");	
+					myWriter("(" + m_InputClassDotFunctionName + "_EQ_TRUE_CALL" + callnum + ")");	
 					myWriter("D=-1");	//D= true
-					
-					myWriter("(" + m_FunctionName + "_EQ_END_CALL" + callnum + ")");	
+
+					myWriter("(" + m_InputClassDotFunctionName + "_EQ_END_CALL" + callnum + ")");	
 					break;
 				case "gt":
 					myWriter("@R13");
 					myWriter("D=D-M");	//D= x - y
-					myWriter("@" + m_FunctionName + "_GT_TRUE_CALL"+callnum);	
+					myWriter("@" + m_InputClassDotFunctionName + "_GT_TRUE_CALL" + callnum);	
 					myWriter("D;JGT");	//if D > 0 jump
 					//偽の場合
 					myWriter("D=0");		//D= false
-					myWriter("@" + m_FunctionName + "_GT_END_CALL"+callnum);	
+					myWriter("@" + m_InputClassDotFunctionName + "_GT_END_CALL" + callnum);	
 					myWriter("0;JMP");	//無条件ジャンプ
 					//真の場合
-					myWriter("(" + m_FunctionName + "_GT_TRUE_CALL" + callnum + ")");	
+					myWriter("(" + m_InputClassDotFunctionName + "_GT_TRUE_CALL" + callnum + ")");	
 					myWriter("D=-1");	//D= true
 
-					myWriter("(" + m_FunctionName + "_GT_END_CALL" + callnum + ")");	
+					myWriter("(" + m_InputClassDotFunctionName + "_GT_END_CALL" + callnum + ")");	
 					break;
 				case "lt":
 					myWriter("@R13");
 					myWriter("D=D-M");	//D= x - y
-					myWriter("@" + m_FunctionName + "_LT_TRUE_CALL"+callnum);	
+					myWriter("@" + m_InputClassDotFunctionName + "_LT_TRUE_CALL" + callnum);	
 					myWriter("D;JLT");	//if D < 0 jump
 					//偽の場合
 					myWriter("D=0");		//D= false
-					myWriter("@" + m_FunctionName + "_LT_END_CALL"+callnum);	
+					myWriter("@" + m_InputClassDotFunctionName + "_LT_END_CALL" + callnum);	
 					myWriter("0;JMP");	//無条件ジャンプ
 					//真の場合
-					myWriter("(" + m_FunctionName + "_LT_TRUE_CALL" + callnum + ")");	
+					myWriter("(" + m_InputClassDotFunctionName + "_LT_TRUE_CALL" + callnum + ")");	
 					myWriter("D=-1");	//D= true
 
-					myWriter("(" + m_FunctionName + "_LT_END_CALL" + callnum + ")");	
+					myWriter("(" + m_InputClassDotFunctionName + "_LT_END_CALL" + callnum + ")");	
 					break;
 				case "and":
 					myWriter("@R13");
@@ -196,7 +208,7 @@ namespace VMtranslator
                 }
                 else if (segment.Equals("static"))
                 {
-                    myWriter("@" + m_FunctionName + "." + index);    //Aにラベルのアドレスを入れる
+					myWriter("@" + m_InputClassName + "." + index);    //Aにラベルのアドレスを入れる
                     myWriter("D=M");     //D = M[ラベルのアドレス]
                 }
 
@@ -271,7 +283,7 @@ namespace VMtranslator
                 }
                 else if (segment.Equals("static"))
                 {
-                    myWriter("@" + m_FunctionName + "." + index);    // @ラベル
+					myWriter("@" + m_InputClassName + "." + index);    // @ラベル
                     myWriter("M=D");     //M[ラベルのアドレス] = D
                 }
 			}
@@ -280,12 +292,12 @@ namespace VMtranslator
 
         public void writeLabel(string label)
         {
-            myWriter("("+ m_FunctionName + "$" + label + ")");
+			myWriter("(" + m_InputClassDotFunctionName + "$" + label + ")");
         }
 
         public void writeGoto(string label)
         {
-            myWriter("@" + m_FunctionName + "$" + label);
+			myWriter("@" + m_InputClassDotFunctionName + "$" + label);
             myWriter("0;JMP");
         }
 
@@ -300,14 +312,18 @@ namespace VMtranslator
 			myWriter("A=M"); // A = M[SP]
 			myWriter("D=M"); // D = M[M[SP]]
 
-			
-			myWriter("@" + m_FunctionName + "$" + label);
+
+			myWriter("@" + m_InputClassDotFunctionName + "$" + label);
 			//0以外ならジャンプ、0ならジャンプしない
 			myWriter("D;JNE");
 		}
 		public void writeFunction(string functionName, int numLocals)
 		{
-			//関数のlabelを作る。関数名はグローバル（かぶらない）
+			m_InputClassDotFunctionName = functionName;
+			string[] stArrayData = functionName.Split('.');
+			m_InputClassName = stArrayData[0];
+
+			//関数のlabelを作る。クラス名.関数名はグローバル（かぶらない）
 			myWriter("(" + functionName + ")");
 			
 			//numLocalsの数だけ
@@ -441,16 +457,16 @@ namespace VMtranslator
 
 			//ARGを引数の先頭に移す。ARG=SP - (numArgs + 5)
 			myWriter("@SP");
-			myWriter("D=A"); // D=SP
+			myWriter("D=M"); // D=M[SP]
 			int temp = numArgs + 5;
 			myWriter("@"+temp); // A =numArgs + 5
-			myWriter("D=D-A"); // D=SP - A
+			myWriter("D=D-A"); // D=M[SP] - A
 			myWriter("@ARG");
 			myWriter("M=D"); // M[ARG] = D
 
 			//LCLをSPのところに移す
 			myWriter("@SP");
-			myWriter("D=A"); // HACK:上の処理と合体できそう
+			myWriter("D=M"); // HACK:上の処理と合体できそう
 			myWriter("@LCL");
 			myWriter("M=D"); // M[LCL] = D
 
@@ -471,6 +487,7 @@ namespace VMtranslator
 			callerFrame = new StackFrame(2);
 			string methodName2 = callerFrame.GetMethod().Name;
 
+			//書き込み
 			m_file_writer.WriteLine(line + "\t\t\t//#{0:d4}\t<-\t" + methodName1 + "\t<-\t"+ methodName2,romRowNum);
 
 			//L令ならROM行数カウントアップしない
