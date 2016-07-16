@@ -11,7 +11,7 @@ namespace VMtranslator
 {
 	class CodeWriter
 	{
-		StreamWriter m_file_writer;
+		public StreamWriter m_file_writer;
 
 		/// <summary>
 		/// クラス名.関数名の形
@@ -47,11 +47,13 @@ namespace VMtranslator
 		/// </summary>
 		public void WriteInit()
 		{
+			//HACK:これいらない？
+			/*
 			myWriter("@256");
 			myWriter("D=A");
 			myWriter("@SP");
 			myWriter("M=D");
-
+			*/
 			myWriter("@Sys.init");
 			myWriter("0;JMP");
 		}
@@ -319,12 +321,18 @@ namespace VMtranslator
 		}
 		public void writeFunction(string functionName, int numLocals)
 		{
+
 			m_InputClassDotFunctionName = functionName;
 			string[] stArrayData = functionName.Split('.');
 			m_InputClassName = stArrayData[0];
 
+#if DEBUG
+			m_file_writer.WriteLine("//"+ m_InputClassDotFunctionName);
+#endif
+
+
 			//関数のlabelを作る。クラス名.関数名はグローバル（かぶらない）
-			myWriter("(" + functionName + ")");
+			myWriter("(" + m_InputClassDotFunctionName + ")");
 			
 			//numLocalsの数だけ
 			//SPとLCLは同じアドレスを指している。これでローカル変数が初期化され、SPが正しい位置にいく
@@ -339,27 +347,36 @@ namespace VMtranslator
 		{
 			//HACK:教科書p179通りにやったけど大分短縮できそう
 			//ただpush,popがR13,R14を使うので教科書と順番入れ替えてる。まずポップ
+			//引数が0個の場合にリターンアドレスを上書きしてしまうからやめた
 
-
-			//*ARG = pop()　
-			writePushPop(Parser.CommandTypes.C_POP, "argument", 0);
-
-			//M[LCL-5]にFRAMEがあるので、とってくる	
+			//M[LCL]にFRAMEがあるので、とってきてFRAMEは一時退避
 			myWriter("@LCL");
 			myWriter("D=M");     // D = M[LCL]
-			//FRAMEは一時退避
 			myWriter("@R13");
 			myWriter("M=D");     // M[R13] = D 
-			//RETは一時退避
+
+			//RETはM[LCL]-5,一時退避
 			myWriter("@5");		// A = 5
-			myWriter("A=D-A");   // A = M[LCL]-5
+			myWriter("A=D-A");   // A = D(M[LCL])-5
 			myWriter("D=M");     // D = M[M[LCL]-5]
 			myWriter("@R14");
 			myWriter("M=D");     // M[R14]=D
 
+			//*ARG = pop()　関数の戻り値をARG[0]に入れる
+			//スタックポインタを１つ下げる
+			myWriter("@SP");
+			myWriter("M=M-1");  //M[SP] = M[SP] - 1
+								//スタックからDに読みだす
+			myWriter("@SP");
+			myWriter("A=M");    // A = M[SP]
+			myWriter("D=M");    // D = M[M[SP]]
+			myWriter("@ARG");
+			myWriter("A=M");     //A = M[ARG]
+			myWriter("M=D");     //M[M[ARG]] = D
+
 			//SP = ARG+1
 			myWriter("@ARG");	// A = ARG
-			myWriter("D=M+1");	// D = M[ARG+1
+			myWriter("D=M+1");	// D = M[ARG]+1
 			myWriter("@SP");     // A = SP
 			myWriter("M=D");     // M[SP]=D
 
@@ -384,7 +401,7 @@ namespace VMtranslator
 			myWriter("@ARG");
 			myWriter("M=D");     // M[ARG] = D
 
-			//ARG = *(FRAM-4)
+			//LCL = *(FRAM-4)
 			myWriter("@R13");
 			myWriter("AM=M-1");     // A,M[R13]=M[R13] - 1
 			myWriter("D=M");        // D = M[ M[R13] - 1 ]
@@ -471,8 +488,8 @@ namespace VMtranslator
 			myWriter("M=D"); // M[LCL] = D
 
 			//関数へジャンプする
-			writeGoto(functionName);
-
+			myWriter("@" + functionName);
+			myWriter("0;JMP");
 			//リターンアドレスのためのラベルを宣言
 			myWriter("(" + functionName + "_FUNC_CALL" + callnum + ")");
 		}
@@ -488,7 +505,11 @@ namespace VMtranslator
 			string methodName2 = callerFrame.GetMethod().Name;
 
 			//書き込み
-			m_file_writer.WriteLine(line + "\t\t\t//#{0:d4}\t<-\t" + methodName1 + "\t<-\t"+ methodName2,romRowNum);
+#if DEBUG
+			m_file_writer.Write("\t\t");
+#endif
+
+			m_file_writer.WriteLine(line + "\t\t\t//{0:d4}\t<-\t" + methodName1 + "\t<-\t"+ methodName2,romRowNum);
 
 			//L令ならROM行数カウントアップしない
 			Regex r = new Regex(@"^\(([^;=\(\)]+)\)$");
@@ -499,6 +520,8 @@ namespace VMtranslator
 				romRowNum++;
 			}
 		}
+
+		
 
 	}
 }

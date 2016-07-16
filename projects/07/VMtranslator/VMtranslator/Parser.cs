@@ -12,6 +12,7 @@ namespace VMtranslator
 	{
 		FileStream m_file;
 		StreamReader m_file_reader;
+		public String line;
 		public enum CommandTypes
 		{
 			C_ARITHMETIC, C_PUSH, C_POP, C_LABEL, C_GOTO, C_IF, C_FUNCTION, C_RETURN, C_CALL, OTHER
@@ -33,7 +34,6 @@ namespace VMtranslator
 		public bool hasMoreCommands()
 		{
 			commandtype = CommandTypes.OTHER;
-			String line;
 			//コマンドを見つけるorファイル末尾までいく、まで1行ずつ読む
 			while ((line = m_file_reader.ReadLine()) != null)
 			{

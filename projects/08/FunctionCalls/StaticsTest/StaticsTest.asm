@@ -1,602 +1,601 @@
-@256			//#0000	<-	WriteInit	<-	Main
-D=A			//#0001	<-	WriteInit	<-	Main
-@SP			//#0002	<-	WriteInit	<-	Main
-M=D			//#0003	<-	WriteInit	<-	Main
-@Sys.init			//#0004	<-	WriteInit	<-	Main
-0;JMP			//#0005	<-	WriteInit	<-	Main
-(Class1.set)			//#0006	<-	writeFunction	<-	Main
-@ARG			//#0006	<-	writePushPop	<-	Main
-D=M			//#0007	<-	writePushPop	<-	Main
-@0			//#0008	<-	writePushPop	<-	Main
-A=D+A			//#0009	<-	writePushPop	<-	Main
-D=M			//#0010	<-	writePushPop	<-	Main
-@SP			//#0011	<-	writePushPop	<-	Main
-A=M			//#0012	<-	writePushPop	<-	Main
-M=D			//#0013	<-	writePushPop	<-	Main
-@SP			//#0014	<-	writePushPop	<-	Main
-M=M+1			//#0015	<-	writePushPop	<-	Main
-@SP			//#0016	<-	writePushPop	<-	Main
-M=M-1			//#0017	<-	writePushPop	<-	Main
-@SP			//#0018	<-	writePushPop	<-	Main
-A=M			//#0019	<-	writePushPop	<-	Main
-D=M			//#0020	<-	writePushPop	<-	Main
-@Class1.0			//#0021	<-	writePushPop	<-	Main
-M=D			//#0022	<-	writePushPop	<-	Main
-@ARG			//#0023	<-	writePushPop	<-	Main
-D=M			//#0024	<-	writePushPop	<-	Main
-@1			//#0025	<-	writePushPop	<-	Main
-A=D+A			//#0026	<-	writePushPop	<-	Main
-D=M			//#0027	<-	writePushPop	<-	Main
-@SP			//#0028	<-	writePushPop	<-	Main
-A=M			//#0029	<-	writePushPop	<-	Main
-M=D			//#0030	<-	writePushPop	<-	Main
-@SP			//#0031	<-	writePushPop	<-	Main
-M=M+1			//#0032	<-	writePushPop	<-	Main
-@SP			//#0033	<-	writePushPop	<-	Main
-M=M-1			//#0034	<-	writePushPop	<-	Main
-@SP			//#0035	<-	writePushPop	<-	Main
-A=M			//#0036	<-	writePushPop	<-	Main
-D=M			//#0037	<-	writePushPop	<-	Main
-@Class1.1			//#0038	<-	writePushPop	<-	Main
-M=D			//#0039	<-	writePushPop	<-	Main
-@0			//#0040	<-	writePushPop	<-	Main
-D=A			//#0041	<-	writePushPop	<-	Main
-@SP			//#0042	<-	writePushPop	<-	Main
-A=M			//#0043	<-	writePushPop	<-	Main
-M=D			//#0044	<-	writePushPop	<-	Main
-@SP			//#0045	<-	writePushPop	<-	Main
-M=M+1			//#0046	<-	writePushPop	<-	Main
-@SP			//#0047	<-	writePushPop	<-	writeReturn
-M=M-1			//#0048	<-	writePushPop	<-	writeReturn
-@SP			//#0049	<-	writePushPop	<-	writeReturn
-A=M			//#0050	<-	writePushPop	<-	writeReturn
-D=M			//#0051	<-	writePushPop	<-	writeReturn
-@R13			//#0052	<-	writePushPop	<-	writeReturn
-M=D			//#0053	<-	writePushPop	<-	writeReturn
-@ARG			//#0054	<-	writePushPop	<-	writeReturn
-D=M			//#0055	<-	writePushPop	<-	writeReturn
-@0			//#0056	<-	writePushPop	<-	writeReturn
-D=D+A			//#0057	<-	writePushPop	<-	writeReturn
-@R14			//#0058	<-	writePushPop	<-	writeReturn
-M=D			//#0059	<-	writePushPop	<-	writeReturn
-@R13			//#0060	<-	writePushPop	<-	writeReturn
-D=M			//#0061	<-	writePushPop	<-	writeReturn
-@R14			//#0062	<-	writePushPop	<-	writeReturn
-A=M			//#0063	<-	writePushPop	<-	writeReturn
-M=D			//#0064	<-	writePushPop	<-	writeReturn
-@LCL			//#0065	<-	writeReturn	<-	Main
-D=M			//#0066	<-	writeReturn	<-	Main
-@R13			//#0067	<-	writeReturn	<-	Main
-M=D			//#0068	<-	writeReturn	<-	Main
-@5			//#0069	<-	writeReturn	<-	Main
-A=D-A			//#0070	<-	writeReturn	<-	Main
-D=M			//#0071	<-	writeReturn	<-	Main
-@R14			//#0072	<-	writeReturn	<-	Main
-M=D			//#0073	<-	writeReturn	<-	Main
-@ARG			//#0074	<-	writeReturn	<-	Main
-D=M+1			//#0075	<-	writeReturn	<-	Main
-@SP			//#0076	<-	writeReturn	<-	Main
-M=D			//#0077	<-	writeReturn	<-	Main
-@R13			//#0078	<-	writeReturn	<-	Main
-AM=M-1			//#0079	<-	writeReturn	<-	Main
-D=M			//#0080	<-	writeReturn	<-	Main
-@THAT			//#0081	<-	writeReturn	<-	Main
-M=D			//#0082	<-	writeReturn	<-	Main
-@R13			//#0083	<-	writeReturn	<-	Main
-AM=M-1			//#0084	<-	writeReturn	<-	Main
-D=M			//#0085	<-	writeReturn	<-	Main
-@THIS			//#0086	<-	writeReturn	<-	Main
-M=D			//#0087	<-	writeReturn	<-	Main
-@R13			//#0088	<-	writeReturn	<-	Main
-AM=M-1			//#0089	<-	writeReturn	<-	Main
-D=M			//#0090	<-	writeReturn	<-	Main
-@ARG			//#0091	<-	writeReturn	<-	Main
-M=D			//#0092	<-	writeReturn	<-	Main
-@R13			//#0093	<-	writeReturn	<-	Main
-AM=M-1			//#0094	<-	writeReturn	<-	Main
-D=M			//#0095	<-	writeReturn	<-	Main
-@LCL			//#0096	<-	writeReturn	<-	Main
-M=D			//#0097	<-	writeReturn	<-	Main
-@R14			//#0098	<-	writeReturn	<-	Main
-A=M			//#0099	<-	writeReturn	<-	Main
-0;JMP			//#0100	<-	writeReturn	<-	Main
-(Class1.get)			//#0101	<-	writeFunction	<-	Main
-@Class1.0			//#0101	<-	writePushPop	<-	Main
-D=M			//#0102	<-	writePushPop	<-	Main
-@SP			//#0103	<-	writePushPop	<-	Main
-A=M			//#0104	<-	writePushPop	<-	Main
-M=D			//#0105	<-	writePushPop	<-	Main
-@SP			//#0106	<-	writePushPop	<-	Main
-M=M+1			//#0107	<-	writePushPop	<-	Main
-@Class1.1			//#0108	<-	writePushPop	<-	Main
-D=M			//#0109	<-	writePushPop	<-	Main
-@SP			//#0110	<-	writePushPop	<-	Main
-A=M			//#0111	<-	writePushPop	<-	Main
-M=D			//#0112	<-	writePushPop	<-	Main
-@SP			//#0113	<-	writePushPop	<-	Main
-M=M+1			//#0114	<-	writePushPop	<-	Main
-@SP			//#0115	<-	writeArithmetic	<-	Main
-M=M-1			//#0116	<-	writeArithmetic	<-	Main
-A=M			//#0117	<-	writeArithmetic	<-	Main
-D=M			//#0118	<-	writeArithmetic	<-	Main
-@R13			//#0119	<-	writeArithmetic	<-	Main
-M=D			//#0120	<-	writeArithmetic	<-	Main
-@SP			//#0121	<-	writeArithmetic	<-	Main
-A=M-1			//#0122	<-	writeArithmetic	<-	Main
-D=M			//#0123	<-	writeArithmetic	<-	Main
-@R13			//#0124	<-	writeArithmetic	<-	Main
-D=D-M			//#0125	<-	writeArithmetic	<-	Main
-@SP			//#0126	<-	writeArithmetic	<-	Main
-A=M-1			//#0127	<-	writeArithmetic	<-	Main
-M=D			//#0128	<-	writeArithmetic	<-	Main
-@SP			//#0129	<-	writePushPop	<-	writeReturn
-M=M-1			//#0130	<-	writePushPop	<-	writeReturn
-@SP			//#0131	<-	writePushPop	<-	writeReturn
-A=M			//#0132	<-	writePushPop	<-	writeReturn
-D=M			//#0133	<-	writePushPop	<-	writeReturn
-@R13			//#0134	<-	writePushPop	<-	writeReturn
-M=D			//#0135	<-	writePushPop	<-	writeReturn
-@ARG			//#0136	<-	writePushPop	<-	writeReturn
-D=M			//#0137	<-	writePushPop	<-	writeReturn
-@0			//#0138	<-	writePushPop	<-	writeReturn
-D=D+A			//#0139	<-	writePushPop	<-	writeReturn
-@R14			//#0140	<-	writePushPop	<-	writeReturn
-M=D			//#0141	<-	writePushPop	<-	writeReturn
-@R13			//#0142	<-	writePushPop	<-	writeReturn
-D=M			//#0143	<-	writePushPop	<-	writeReturn
-@R14			//#0144	<-	writePushPop	<-	writeReturn
-A=M			//#0145	<-	writePushPop	<-	writeReturn
-M=D			//#0146	<-	writePushPop	<-	writeReturn
-@LCL			//#0147	<-	writeReturn	<-	Main
-D=M			//#0148	<-	writeReturn	<-	Main
-@R13			//#0149	<-	writeReturn	<-	Main
-M=D			//#0150	<-	writeReturn	<-	Main
-@5			//#0151	<-	writeReturn	<-	Main
-A=D-A			//#0152	<-	writeReturn	<-	Main
-D=M			//#0153	<-	writeReturn	<-	Main
-@R14			//#0154	<-	writeReturn	<-	Main
-M=D			//#0155	<-	writeReturn	<-	Main
-@ARG			//#0156	<-	writeReturn	<-	Main
-D=M+1			//#0157	<-	writeReturn	<-	Main
-@SP			//#0158	<-	writeReturn	<-	Main
-M=D			//#0159	<-	writeReturn	<-	Main
-@R13			//#0160	<-	writeReturn	<-	Main
-AM=M-1			//#0161	<-	writeReturn	<-	Main
-D=M			//#0162	<-	writeReturn	<-	Main
-@THAT			//#0163	<-	writeReturn	<-	Main
-M=D			//#0164	<-	writeReturn	<-	Main
-@R13			//#0165	<-	writeReturn	<-	Main
-AM=M-1			//#0166	<-	writeReturn	<-	Main
-D=M			//#0167	<-	writeReturn	<-	Main
-@THIS			//#0168	<-	writeReturn	<-	Main
-M=D			//#0169	<-	writeReturn	<-	Main
-@R13			//#0170	<-	writeReturn	<-	Main
-AM=M-1			//#0171	<-	writeReturn	<-	Main
-D=M			//#0172	<-	writeReturn	<-	Main
-@ARG			//#0173	<-	writeReturn	<-	Main
-M=D			//#0174	<-	writeReturn	<-	Main
-@R13			//#0175	<-	writeReturn	<-	Main
-AM=M-1			//#0176	<-	writeReturn	<-	Main
-D=M			//#0177	<-	writeReturn	<-	Main
-@LCL			//#0178	<-	writeReturn	<-	Main
-M=D			//#0179	<-	writeReturn	<-	Main
-@R14			//#0180	<-	writeReturn	<-	Main
-A=M			//#0181	<-	writeReturn	<-	Main
-0;JMP			//#0182	<-	writeReturn	<-	Main
-(Class2.set)			//#0183	<-	writeFunction	<-	Main
-@ARG			//#0183	<-	writePushPop	<-	Main
-D=M			//#0184	<-	writePushPop	<-	Main
-@0			//#0185	<-	writePushPop	<-	Main
-A=D+A			//#0186	<-	writePushPop	<-	Main
-D=M			//#0187	<-	writePushPop	<-	Main
-@SP			//#0188	<-	writePushPop	<-	Main
-A=M			//#0189	<-	writePushPop	<-	Main
-M=D			//#0190	<-	writePushPop	<-	Main
-@SP			//#0191	<-	writePushPop	<-	Main
-M=M+1			//#0192	<-	writePushPop	<-	Main
-@SP			//#0193	<-	writePushPop	<-	Main
-M=M-1			//#0194	<-	writePushPop	<-	Main
-@SP			//#0195	<-	writePushPop	<-	Main
-A=M			//#0196	<-	writePushPop	<-	Main
-D=M			//#0197	<-	writePushPop	<-	Main
-@Class2.0			//#0198	<-	writePushPop	<-	Main
-M=D			//#0199	<-	writePushPop	<-	Main
-@ARG			//#0200	<-	writePushPop	<-	Main
-D=M			//#0201	<-	writePushPop	<-	Main
-@1			//#0202	<-	writePushPop	<-	Main
-A=D+A			//#0203	<-	writePushPop	<-	Main
-D=M			//#0204	<-	writePushPop	<-	Main
-@SP			//#0205	<-	writePushPop	<-	Main
-A=M			//#0206	<-	writePushPop	<-	Main
-M=D			//#0207	<-	writePushPop	<-	Main
-@SP			//#0208	<-	writePushPop	<-	Main
-M=M+1			//#0209	<-	writePushPop	<-	Main
-@SP			//#0210	<-	writePushPop	<-	Main
-M=M-1			//#0211	<-	writePushPop	<-	Main
-@SP			//#0212	<-	writePushPop	<-	Main
-A=M			//#0213	<-	writePushPop	<-	Main
-D=M			//#0214	<-	writePushPop	<-	Main
-@Class2.1			//#0215	<-	writePushPop	<-	Main
-M=D			//#0216	<-	writePushPop	<-	Main
-@0			//#0217	<-	writePushPop	<-	Main
-D=A			//#0218	<-	writePushPop	<-	Main
-@SP			//#0219	<-	writePushPop	<-	Main
-A=M			//#0220	<-	writePushPop	<-	Main
-M=D			//#0221	<-	writePushPop	<-	Main
-@SP			//#0222	<-	writePushPop	<-	Main
-M=M+1			//#0223	<-	writePushPop	<-	Main
-@SP			//#0224	<-	writePushPop	<-	writeReturn
-M=M-1			//#0225	<-	writePushPop	<-	writeReturn
-@SP			//#0226	<-	writePushPop	<-	writeReturn
-A=M			//#0227	<-	writePushPop	<-	writeReturn
-D=M			//#0228	<-	writePushPop	<-	writeReturn
-@R13			//#0229	<-	writePushPop	<-	writeReturn
-M=D			//#0230	<-	writePushPop	<-	writeReturn
-@ARG			//#0231	<-	writePushPop	<-	writeReturn
-D=M			//#0232	<-	writePushPop	<-	writeReturn
-@0			//#0233	<-	writePushPop	<-	writeReturn
-D=D+A			//#0234	<-	writePushPop	<-	writeReturn
-@R14			//#0235	<-	writePushPop	<-	writeReturn
-M=D			//#0236	<-	writePushPop	<-	writeReturn
-@R13			//#0237	<-	writePushPop	<-	writeReturn
-D=M			//#0238	<-	writePushPop	<-	writeReturn
-@R14			//#0239	<-	writePushPop	<-	writeReturn
-A=M			//#0240	<-	writePushPop	<-	writeReturn
-M=D			//#0241	<-	writePushPop	<-	writeReturn
-@LCL			//#0242	<-	writeReturn	<-	Main
-D=M			//#0243	<-	writeReturn	<-	Main
-@R13			//#0244	<-	writeReturn	<-	Main
-M=D			//#0245	<-	writeReturn	<-	Main
-@5			//#0246	<-	writeReturn	<-	Main
-A=D-A			//#0247	<-	writeReturn	<-	Main
-D=M			//#0248	<-	writeReturn	<-	Main
-@R14			//#0249	<-	writeReturn	<-	Main
-M=D			//#0250	<-	writeReturn	<-	Main
-@ARG			//#0251	<-	writeReturn	<-	Main
-D=M+1			//#0252	<-	writeReturn	<-	Main
-@SP			//#0253	<-	writeReturn	<-	Main
-M=D			//#0254	<-	writeReturn	<-	Main
-@R13			//#0255	<-	writeReturn	<-	Main
-AM=M-1			//#0256	<-	writeReturn	<-	Main
-D=M			//#0257	<-	writeReturn	<-	Main
-@THAT			//#0258	<-	writeReturn	<-	Main
-M=D			//#0259	<-	writeReturn	<-	Main
-@R13			//#0260	<-	writeReturn	<-	Main
-AM=M-1			//#0261	<-	writeReturn	<-	Main
-D=M			//#0262	<-	writeReturn	<-	Main
-@THIS			//#0263	<-	writeReturn	<-	Main
-M=D			//#0264	<-	writeReturn	<-	Main
-@R13			//#0265	<-	writeReturn	<-	Main
-AM=M-1			//#0266	<-	writeReturn	<-	Main
-D=M			//#0267	<-	writeReturn	<-	Main
-@ARG			//#0268	<-	writeReturn	<-	Main
-M=D			//#0269	<-	writeReturn	<-	Main
-@R13			//#0270	<-	writeReturn	<-	Main
-AM=M-1			//#0271	<-	writeReturn	<-	Main
-D=M			//#0272	<-	writeReturn	<-	Main
-@LCL			//#0273	<-	writeReturn	<-	Main
-M=D			//#0274	<-	writeReturn	<-	Main
-@R14			//#0275	<-	writeReturn	<-	Main
-A=M			//#0276	<-	writeReturn	<-	Main
-0;JMP			//#0277	<-	writeReturn	<-	Main
-(Class2.get)			//#0278	<-	writeFunction	<-	Main
-@Class2.0			//#0278	<-	writePushPop	<-	Main
-D=M			//#0279	<-	writePushPop	<-	Main
-@SP			//#0280	<-	writePushPop	<-	Main
-A=M			//#0281	<-	writePushPop	<-	Main
-M=D			//#0282	<-	writePushPop	<-	Main
-@SP			//#0283	<-	writePushPop	<-	Main
-M=M+1			//#0284	<-	writePushPop	<-	Main
-@Class2.1			//#0285	<-	writePushPop	<-	Main
-D=M			//#0286	<-	writePushPop	<-	Main
-@SP			//#0287	<-	writePushPop	<-	Main
-A=M			//#0288	<-	writePushPop	<-	Main
-M=D			//#0289	<-	writePushPop	<-	Main
-@SP			//#0290	<-	writePushPop	<-	Main
-M=M+1			//#0291	<-	writePushPop	<-	Main
-@SP			//#0292	<-	writeArithmetic	<-	Main
-M=M-1			//#0293	<-	writeArithmetic	<-	Main
-A=M			//#0294	<-	writeArithmetic	<-	Main
-D=M			//#0295	<-	writeArithmetic	<-	Main
-@R13			//#0296	<-	writeArithmetic	<-	Main
-M=D			//#0297	<-	writeArithmetic	<-	Main
-@SP			//#0298	<-	writeArithmetic	<-	Main
-A=M-1			//#0299	<-	writeArithmetic	<-	Main
-D=M			//#0300	<-	writeArithmetic	<-	Main
-@R13			//#0301	<-	writeArithmetic	<-	Main
-D=D-M			//#0302	<-	writeArithmetic	<-	Main
-@SP			//#0303	<-	writeArithmetic	<-	Main
-A=M-1			//#0304	<-	writeArithmetic	<-	Main
-M=D			//#0305	<-	writeArithmetic	<-	Main
-@SP			//#0306	<-	writePushPop	<-	writeReturn
-M=M-1			//#0307	<-	writePushPop	<-	writeReturn
-@SP			//#0308	<-	writePushPop	<-	writeReturn
-A=M			//#0309	<-	writePushPop	<-	writeReturn
-D=M			//#0310	<-	writePushPop	<-	writeReturn
-@R13			//#0311	<-	writePushPop	<-	writeReturn
-M=D			//#0312	<-	writePushPop	<-	writeReturn
-@ARG			//#0313	<-	writePushPop	<-	writeReturn
-D=M			//#0314	<-	writePushPop	<-	writeReturn
-@0			//#0315	<-	writePushPop	<-	writeReturn
-D=D+A			//#0316	<-	writePushPop	<-	writeReturn
-@R14			//#0317	<-	writePushPop	<-	writeReturn
-M=D			//#0318	<-	writePushPop	<-	writeReturn
-@R13			//#0319	<-	writePushPop	<-	writeReturn
-D=M			//#0320	<-	writePushPop	<-	writeReturn
-@R14			//#0321	<-	writePushPop	<-	writeReturn
-A=M			//#0322	<-	writePushPop	<-	writeReturn
-M=D			//#0323	<-	writePushPop	<-	writeReturn
-@LCL			//#0324	<-	writeReturn	<-	Main
-D=M			//#0325	<-	writeReturn	<-	Main
-@R13			//#0326	<-	writeReturn	<-	Main
-M=D			//#0327	<-	writeReturn	<-	Main
-@5			//#0328	<-	writeReturn	<-	Main
-A=D-A			//#0329	<-	writeReturn	<-	Main
-D=M			//#0330	<-	writeReturn	<-	Main
-@R14			//#0331	<-	writeReturn	<-	Main
-M=D			//#0332	<-	writeReturn	<-	Main
-@ARG			//#0333	<-	writeReturn	<-	Main
-D=M+1			//#0334	<-	writeReturn	<-	Main
-@SP			//#0335	<-	writeReturn	<-	Main
-M=D			//#0336	<-	writeReturn	<-	Main
-@R13			//#0337	<-	writeReturn	<-	Main
-AM=M-1			//#0338	<-	writeReturn	<-	Main
-D=M			//#0339	<-	writeReturn	<-	Main
-@THAT			//#0340	<-	writeReturn	<-	Main
-M=D			//#0341	<-	writeReturn	<-	Main
-@R13			//#0342	<-	writeReturn	<-	Main
-AM=M-1			//#0343	<-	writeReturn	<-	Main
-D=M			//#0344	<-	writeReturn	<-	Main
-@THIS			//#0345	<-	writeReturn	<-	Main
-M=D			//#0346	<-	writeReturn	<-	Main
-@R13			//#0347	<-	writeReturn	<-	Main
-AM=M-1			//#0348	<-	writeReturn	<-	Main
-D=M			//#0349	<-	writeReturn	<-	Main
-@ARG			//#0350	<-	writeReturn	<-	Main
-M=D			//#0351	<-	writeReturn	<-	Main
-@R13			//#0352	<-	writeReturn	<-	Main
-AM=M-1			//#0353	<-	writeReturn	<-	Main
-D=M			//#0354	<-	writeReturn	<-	Main
-@LCL			//#0355	<-	writeReturn	<-	Main
-M=D			//#0356	<-	writeReturn	<-	Main
-@R14			//#0357	<-	writeReturn	<-	Main
-A=M			//#0358	<-	writeReturn	<-	Main
-0;JMP			//#0359	<-	writeReturn	<-	Main
-(Sys.init)			//#0360	<-	writeFunction	<-	Main
-@6			//#0360	<-	writePushPop	<-	Main
-D=A			//#0361	<-	writePushPop	<-	Main
-@SP			//#0362	<-	writePushPop	<-	Main
-A=M			//#0363	<-	writePushPop	<-	Main
-M=D			//#0364	<-	writePushPop	<-	Main
-@SP			//#0365	<-	writePushPop	<-	Main
-M=M+1			//#0366	<-	writePushPop	<-	Main
-@8			//#0367	<-	writePushPop	<-	Main
-D=A			//#0368	<-	writePushPop	<-	Main
-@SP			//#0369	<-	writePushPop	<-	Main
-A=M			//#0370	<-	writePushPop	<-	Main
-M=D			//#0371	<-	writePushPop	<-	Main
-@SP			//#0372	<-	writePushPop	<-	Main
-M=M+1			//#0373	<-	writePushPop	<-	Main
-@Class1.set_FUNC_CALL3			//#0374	<-	writeCall	<-	Main
-D=A			//#0375	<-	writeCall	<-	Main
-@SP			//#0376	<-	writeCall	<-	Main
-A=M			//#0377	<-	writeCall	<-	Main
-M=D			//#0378	<-	writeCall	<-	Main
-@SP			//#0379	<-	writeCall	<-	Main
-M=M+1			//#0380	<-	writeCall	<-	Main
-@LCL			//#0381	<-	writeCall	<-	Main
-D=M			//#0382	<-	writeCall	<-	Main
-@SP			//#0383	<-	writeCall	<-	Main
-A=M			//#0384	<-	writeCall	<-	Main
-M=D			//#0385	<-	writeCall	<-	Main
-@SP			//#0386	<-	writeCall	<-	Main
-M=M+1			//#0387	<-	writeCall	<-	Main
-@ARG			//#0388	<-	writeCall	<-	Main
-D=M			//#0389	<-	writeCall	<-	Main
-@SP			//#0390	<-	writeCall	<-	Main
-A=M			//#0391	<-	writeCall	<-	Main
-M=D			//#0392	<-	writeCall	<-	Main
-@SP			//#0393	<-	writeCall	<-	Main
-M=M+1			//#0394	<-	writeCall	<-	Main
-@THIS			//#0395	<-	writeCall	<-	Main
-D=M			//#0396	<-	writeCall	<-	Main
-@SP			//#0397	<-	writeCall	<-	Main
-A=M			//#0398	<-	writeCall	<-	Main
-M=D			//#0399	<-	writeCall	<-	Main
-@SP			//#0400	<-	writeCall	<-	Main
-M=M+1			//#0401	<-	writeCall	<-	Main
-@THAT			//#0402	<-	writeCall	<-	Main
-D=M			//#0403	<-	writeCall	<-	Main
-@SP			//#0404	<-	writeCall	<-	Main
-A=M			//#0405	<-	writeCall	<-	Main
-M=D			//#0406	<-	writeCall	<-	Main
-@SP			//#0407	<-	writeCall	<-	Main
-M=M+1			//#0408	<-	writeCall	<-	Main
-@SP			//#0409	<-	writeCall	<-	Main
-D=M			//#0410	<-	writeCall	<-	Main
-@7			//#0411	<-	writeCall	<-	Main
-D=D-A			//#0412	<-	writeCall	<-	Main
-@ARG			//#0413	<-	writeCall	<-	Main
-M=D			//#0414	<-	writeCall	<-	Main
-@SP			//#0415	<-	writeCall	<-	Main
-D=M			//#0416	<-	writeCall	<-	Main
-@LCL			//#0417	<-	writeCall	<-	Main
-M=D			//#0418	<-	writeCall	<-	Main
-@Sys.init$Class1.set			//#0419	<-	writeGoto	<-	writeCall
-0;JMP			//#0420	<-	writeGoto	<-	writeCall
-(Class1.set_FUNC_CALL3)			//#0421	<-	writeCall	<-	Main
-@SP			//#0421	<-	writePushPop	<-	Main
-M=M-1			//#0422	<-	writePushPop	<-	Main
-@SP			//#0423	<-	writePushPop	<-	Main
-A=M			//#0424	<-	writePushPop	<-	Main
-D=M			//#0425	<-	writePushPop	<-	Main
-@5			//#0426	<-	writePushPop	<-	Main
-M=D			//#0427	<-	writePushPop	<-	Main
-@23			//#0428	<-	writePushPop	<-	Main
-D=A			//#0429	<-	writePushPop	<-	Main
-@SP			//#0430	<-	writePushPop	<-	Main
-A=M			//#0431	<-	writePushPop	<-	Main
-M=D			//#0432	<-	writePushPop	<-	Main
-@SP			//#0433	<-	writePushPop	<-	Main
-M=M+1			//#0434	<-	writePushPop	<-	Main
-@15			//#0435	<-	writePushPop	<-	Main
-D=A			//#0436	<-	writePushPop	<-	Main
-@SP			//#0437	<-	writePushPop	<-	Main
-A=M			//#0438	<-	writePushPop	<-	Main
-M=D			//#0439	<-	writePushPop	<-	Main
-@SP			//#0440	<-	writePushPop	<-	Main
-M=M+1			//#0441	<-	writePushPop	<-	Main
-@Class2.set_FUNC_CALL4			//#0442	<-	writeCall	<-	Main
-D=A			//#0443	<-	writeCall	<-	Main
-@SP			//#0444	<-	writeCall	<-	Main
-A=M			//#0445	<-	writeCall	<-	Main
-M=D			//#0446	<-	writeCall	<-	Main
-@SP			//#0447	<-	writeCall	<-	Main
-M=M+1			//#0448	<-	writeCall	<-	Main
-@LCL			//#0449	<-	writeCall	<-	Main
-D=M			//#0450	<-	writeCall	<-	Main
-@SP			//#0451	<-	writeCall	<-	Main
-A=M			//#0452	<-	writeCall	<-	Main
-M=D			//#0453	<-	writeCall	<-	Main
-@SP			//#0454	<-	writeCall	<-	Main
-M=M+1			//#0455	<-	writeCall	<-	Main
-@ARG			//#0456	<-	writeCall	<-	Main
-D=M			//#0457	<-	writeCall	<-	Main
-@SP			//#0458	<-	writeCall	<-	Main
-A=M			//#0459	<-	writeCall	<-	Main
-M=D			//#0460	<-	writeCall	<-	Main
-@SP			//#0461	<-	writeCall	<-	Main
-M=M+1			//#0462	<-	writeCall	<-	Main
-@THIS			//#0463	<-	writeCall	<-	Main
-D=M			//#0464	<-	writeCall	<-	Main
-@SP			//#0465	<-	writeCall	<-	Main
-A=M			//#0466	<-	writeCall	<-	Main
-M=D			//#0467	<-	writeCall	<-	Main
-@SP			//#0468	<-	writeCall	<-	Main
-M=M+1			//#0469	<-	writeCall	<-	Main
-@THAT			//#0470	<-	writeCall	<-	Main
-D=M			//#0471	<-	writeCall	<-	Main
-@SP			//#0472	<-	writeCall	<-	Main
-A=M			//#0473	<-	writeCall	<-	Main
-M=D			//#0474	<-	writeCall	<-	Main
-@SP			//#0475	<-	writeCall	<-	Main
-M=M+1			//#0476	<-	writeCall	<-	Main
-@SP			//#0477	<-	writeCall	<-	Main
-D=M			//#0478	<-	writeCall	<-	Main
-@7			//#0479	<-	writeCall	<-	Main
-D=D-A			//#0480	<-	writeCall	<-	Main
-@ARG			//#0481	<-	writeCall	<-	Main
-M=D			//#0482	<-	writeCall	<-	Main
-@SP			//#0483	<-	writeCall	<-	Main
-D=M			//#0484	<-	writeCall	<-	Main
-@LCL			//#0485	<-	writeCall	<-	Main
-M=D			//#0486	<-	writeCall	<-	Main
-@Sys.init$Class2.set			//#0487	<-	writeGoto	<-	writeCall
-0;JMP			//#0488	<-	writeGoto	<-	writeCall
-(Class2.set_FUNC_CALL4)			//#0489	<-	writeCall	<-	Main
-@SP			//#0489	<-	writePushPop	<-	Main
-M=M-1			//#0490	<-	writePushPop	<-	Main
-@SP			//#0491	<-	writePushPop	<-	Main
-A=M			//#0492	<-	writePushPop	<-	Main
-D=M			//#0493	<-	writePushPop	<-	Main
-@5			//#0494	<-	writePushPop	<-	Main
-M=D			//#0495	<-	writePushPop	<-	Main
-@Class1.get_FUNC_CALL5			//#0496	<-	writeCall	<-	Main
-D=A			//#0497	<-	writeCall	<-	Main
-@SP			//#0498	<-	writeCall	<-	Main
-A=M			//#0499	<-	writeCall	<-	Main
-M=D			//#0500	<-	writeCall	<-	Main
-@SP			//#0501	<-	writeCall	<-	Main
-M=M+1			//#0502	<-	writeCall	<-	Main
-@LCL			//#0503	<-	writeCall	<-	Main
-D=M			//#0504	<-	writeCall	<-	Main
-@SP			//#0505	<-	writeCall	<-	Main
-A=M			//#0506	<-	writeCall	<-	Main
-M=D			//#0507	<-	writeCall	<-	Main
-@SP			//#0508	<-	writeCall	<-	Main
-M=M+1			//#0509	<-	writeCall	<-	Main
-@ARG			//#0510	<-	writeCall	<-	Main
-D=M			//#0511	<-	writeCall	<-	Main
-@SP			//#0512	<-	writeCall	<-	Main
-A=M			//#0513	<-	writeCall	<-	Main
-M=D			//#0514	<-	writeCall	<-	Main
-@SP			//#0515	<-	writeCall	<-	Main
-M=M+1			//#0516	<-	writeCall	<-	Main
-@THIS			//#0517	<-	writeCall	<-	Main
-D=M			//#0518	<-	writeCall	<-	Main
-@SP			//#0519	<-	writeCall	<-	Main
-A=M			//#0520	<-	writeCall	<-	Main
-M=D			//#0521	<-	writeCall	<-	Main
-@SP			//#0522	<-	writeCall	<-	Main
-M=M+1			//#0523	<-	writeCall	<-	Main
-@THAT			//#0524	<-	writeCall	<-	Main
-D=M			//#0525	<-	writeCall	<-	Main
-@SP			//#0526	<-	writeCall	<-	Main
-A=M			//#0527	<-	writeCall	<-	Main
-M=D			//#0528	<-	writeCall	<-	Main
-@SP			//#0529	<-	writeCall	<-	Main
-M=M+1			//#0530	<-	writeCall	<-	Main
-@SP			//#0531	<-	writeCall	<-	Main
-D=M			//#0532	<-	writeCall	<-	Main
-@5			//#0533	<-	writeCall	<-	Main
-D=D-A			//#0534	<-	writeCall	<-	Main
-@ARG			//#0535	<-	writeCall	<-	Main
-M=D			//#0536	<-	writeCall	<-	Main
-@SP			//#0537	<-	writeCall	<-	Main
-D=M			//#0538	<-	writeCall	<-	Main
-@LCL			//#0539	<-	writeCall	<-	Main
-M=D			//#0540	<-	writeCall	<-	Main
-@Sys.init$Class1.get			//#0541	<-	writeGoto	<-	writeCall
-0;JMP			//#0542	<-	writeGoto	<-	writeCall
-(Class1.get_FUNC_CALL5)			//#0543	<-	writeCall	<-	Main
-@Class2.get_FUNC_CALL6			//#0543	<-	writeCall	<-	Main
-D=A			//#0544	<-	writeCall	<-	Main
-@SP			//#0545	<-	writeCall	<-	Main
-A=M			//#0546	<-	writeCall	<-	Main
-M=D			//#0547	<-	writeCall	<-	Main
-@SP			//#0548	<-	writeCall	<-	Main
-M=M+1			//#0549	<-	writeCall	<-	Main
-@LCL			//#0550	<-	writeCall	<-	Main
-D=M			//#0551	<-	writeCall	<-	Main
-@SP			//#0552	<-	writeCall	<-	Main
-A=M			//#0553	<-	writeCall	<-	Main
-M=D			//#0554	<-	writeCall	<-	Main
-@SP			//#0555	<-	writeCall	<-	Main
-M=M+1			//#0556	<-	writeCall	<-	Main
-@ARG			//#0557	<-	writeCall	<-	Main
-D=M			//#0558	<-	writeCall	<-	Main
-@SP			//#0559	<-	writeCall	<-	Main
-A=M			//#0560	<-	writeCall	<-	Main
-M=D			//#0561	<-	writeCall	<-	Main
-@SP			//#0562	<-	writeCall	<-	Main
-M=M+1			//#0563	<-	writeCall	<-	Main
-@THIS			//#0564	<-	writeCall	<-	Main
-D=M			//#0565	<-	writeCall	<-	Main
-@SP			//#0566	<-	writeCall	<-	Main
-A=M			//#0567	<-	writeCall	<-	Main
-M=D			//#0568	<-	writeCall	<-	Main
-@SP			//#0569	<-	writeCall	<-	Main
-M=M+1			//#0570	<-	writeCall	<-	Main
-@THAT			//#0571	<-	writeCall	<-	Main
-D=M			//#0572	<-	writeCall	<-	Main
-@SP			//#0573	<-	writeCall	<-	Main
-A=M			//#0574	<-	writeCall	<-	Main
-M=D			//#0575	<-	writeCall	<-	Main
-@SP			//#0576	<-	writeCall	<-	Main
-M=M+1			//#0577	<-	writeCall	<-	Main
-@SP			//#0578	<-	writeCall	<-	Main
-D=M			//#0579	<-	writeCall	<-	Main
-@5			//#0580	<-	writeCall	<-	Main
-D=D-A			//#0581	<-	writeCall	<-	Main
-@ARG			//#0582	<-	writeCall	<-	Main
-M=D			//#0583	<-	writeCall	<-	Main
-@SP			//#0584	<-	writeCall	<-	Main
-D=M			//#0585	<-	writeCall	<-	Main
-@LCL			//#0586	<-	writeCall	<-	Main
-M=D			//#0587	<-	writeCall	<-	Main
-@Sys.init$Class2.get			//#0588	<-	writeGoto	<-	writeCall
-0;JMP			//#0589	<-	writeGoto	<-	writeCall
-(Class2.get_FUNC_CALL6)			//#0590	<-	writeCall	<-	Main
-(Sys.init$WHILE)			//#0590	<-	writeLabel	<-	Main
-@Sys.init$WHILE			//#0590	<-	writeGoto	<-	Main
-0;JMP			//#0591	<-	writeGoto	<-	Main
+		@Sys.init			//0004	<-	WriteInit	<-	Main
+		0;JMP			//0005	<-	WriteInit	<-	Main
+	//function Class1.set 0
+//Class1.set
+		(Class1.set)			//0006	<-	writeFunction	<-	Main
+	//push argument 0
+		@ARG			//0006	<-	writePushPop	<-	Main
+		D=M			//0007	<-	writePushPop	<-	Main
+		@0			//0008	<-	writePushPop	<-	Main
+		A=D+A			//0009	<-	writePushPop	<-	Main
+		D=M			//0010	<-	writePushPop	<-	Main
+		@SP			//0011	<-	writePushPop	<-	Main
+		A=M			//0012	<-	writePushPop	<-	Main
+		M=D			//0013	<-	writePushPop	<-	Main
+		@SP			//0014	<-	writePushPop	<-	Main
+		M=M+1			//0015	<-	writePushPop	<-	Main
+	//pop static 0
+		@SP			//0016	<-	writePushPop	<-	Main
+		M=M-1			//0017	<-	writePushPop	<-	Main
+		@SP			//0018	<-	writePushPop	<-	Main
+		A=M			//0019	<-	writePushPop	<-	Main
+		D=M			//0020	<-	writePushPop	<-	Main
+		@Class1.0			//0021	<-	writePushPop	<-	Main
+		M=D			//0022	<-	writePushPop	<-	Main
+	//push argument 1
+		@ARG			//0023	<-	writePushPop	<-	Main
+		D=M			//0024	<-	writePushPop	<-	Main
+		@1			//0025	<-	writePushPop	<-	Main
+		A=D+A			//0026	<-	writePushPop	<-	Main
+		D=M			//0027	<-	writePushPop	<-	Main
+		@SP			//0028	<-	writePushPop	<-	Main
+		A=M			//0029	<-	writePushPop	<-	Main
+		M=D			//0030	<-	writePushPop	<-	Main
+		@SP			//0031	<-	writePushPop	<-	Main
+		M=M+1			//0032	<-	writePushPop	<-	Main
+	//pop static 1
+		@SP			//0033	<-	writePushPop	<-	Main
+		M=M-1			//0034	<-	writePushPop	<-	Main
+		@SP			//0035	<-	writePushPop	<-	Main
+		A=M			//0036	<-	writePushPop	<-	Main
+		D=M			//0037	<-	writePushPop	<-	Main
+		@Class1.1			//0038	<-	writePushPop	<-	Main
+		M=D			//0039	<-	writePushPop	<-	Main
+	//push constant 0
+		@0			//0040	<-	writePushPop	<-	Main
+		D=A			//0041	<-	writePushPop	<-	Main
+		@SP			//0042	<-	writePushPop	<-	Main
+		A=M			//0043	<-	writePushPop	<-	Main
+		M=D			//0044	<-	writePushPop	<-	Main
+		@SP			//0045	<-	writePushPop	<-	Main
+		M=M+1			//0046	<-	writePushPop	<-	Main
+	//return
+		@LCL			//0047	<-	writeReturn	<-	Main
+		D=M			//0048	<-	writeReturn	<-	Main
+		@R13			//0049	<-	writeReturn	<-	Main
+		M=D			//0050	<-	writeReturn	<-	Main
+		@5			//0051	<-	writeReturn	<-	Main
+		A=D-A			//0052	<-	writeReturn	<-	Main
+		D=M			//0053	<-	writeReturn	<-	Main
+		@R14			//0054	<-	writeReturn	<-	Main
+		M=D			//0055	<-	writeReturn	<-	Main
+		@SP			
+		//0056	<-	writeReturn	<-	Main
+		M=M-1			//0057	<-	writeReturn	<-	Main
+		@SP			//0058	<-	writeReturn	<-	Main
+		A=M			//0059	<-	writeReturn	<-	Main
+		D=M			//0060	<-	writeReturn	<-	Main
+		@ARG			//0061	<-	writeReturn	<-	Main
+		A=M			//0062	<-	writeReturn	<-	Main
+		M=D			//0063	<-	writeReturn	<-	Main
+		@ARG			//0064	<-	writeReturn	<-	Main
+		D=M+1			//0065	<-	writeReturn	<-	Main
+		@SP			//0066	<-	writeReturn	<-	Main
+		M=D			//0067	<-	writeReturn	<-	Main
+		@R13			//0068	<-	writeReturn	<-	Main
+		AM=M-1			//0069	<-	writeReturn	<-	Main
+		D=M			//0070	<-	writeReturn	<-	Main
+		@THAT			//0071	<-	writeReturn	<-	Main
+		M=D			//0072	<-	writeReturn	<-	Main
+		@R13			//0073	<-	writeReturn	<-	Main
+		AM=M-1			//0074	<-	writeReturn	<-	Main
+		D=M			//0075	<-	writeReturn	<-	Main
+		@THIS			//0076	<-	writeReturn	<-	Main
+		M=D			//0077	<-	writeReturn	<-	Main
+		@R13			//0078	<-	writeReturn	<-	Main
+		AM=M-1			//0079	<-	writeReturn	<-	Main
+		D=M			//0080	<-	writeReturn	<-	Main
+		@ARG			//0081	<-	writeReturn	<-	Main
+		M=D			//0082	<-	writeReturn	<-	Main
+		@R13			//0083	<-	writeReturn	<-	Main
+		AM=M-1			//0084	<-	writeReturn	<-	Main
+		D=M			//0085	<-	writeReturn	<-	Main
+		@LCL			//0086	<-	writeReturn	<-	Main
+		M=D			//0087	<-	writeReturn	<-	Main
+		@R14			//0088	<-	writeReturn	<-	Main
+		A=M			//0089	<-	writeReturn	<-	Main
+		0;JMP			//0090	<-	writeReturn	<-	Main
+	//function Class1.get 0
+//Class1.get
+		(Class1.get)			//0091	<-	writeFunction	<-	Main
+	//push static 0
+		@Class1.0			//0091	<-	writePushPop	<-	Main
+		D=M			//0092	<-	writePushPop	<-	Main
+		@SP			//0093	<-	writePushPop	<-	Main
+		A=M			//0094	<-	writePushPop	<-	Main
+		M=D			//0095	<-	writePushPop	<-	Main
+		@SP			//0096	<-	writePushPop	<-	Main
+		M=M+1			//0097	<-	writePushPop	<-	Main
+	//push static 1
+		@Class1.1			//0098	<-	writePushPop	<-	Main
+		D=M			//0099	<-	writePushPop	<-	Main
+		@SP			//0100	<-	writePushPop	<-	Main
+		A=M			//0101	<-	writePushPop	<-	Main
+		M=D			//0102	<-	writePushPop	<-	Main
+		@SP			//0103	<-	writePushPop	<-	Main
+		M=M+1			//0104	<-	writePushPop	<-	Main
+	//sub
+		@SP			//0105	<-	writeArithmetic	<-	Main
+		M=M-1			//0106	<-	writeArithmetic	<-	Main
+		A=M			//0107	<-	writeArithmetic	<-	Main
+		D=M			//0108	<-	writeArithmetic	<-	Main
+		@R13			//0109	<-	writeArithmetic	<-	Main
+		M=D			//0110	<-	writeArithmetic	<-	Main
+		@SP			//0111	<-	writeArithmetic	<-	Main
+		A=M-1			//0112	<-	writeArithmetic	<-	Main
+		D=M			//0113	<-	writeArithmetic	<-	Main
+		@R13			//0114	<-	writeArithmetic	<-	Main
+		D=D-M			//0115	<-	writeArithmetic	<-	Main
+		@SP			//0116	<-	writeArithmetic	<-	Main
+		A=M-1			//0117	<-	writeArithmetic	<-	Main
+		M=D			//0118	<-	writeArithmetic	<-	Main
+	//return
+		@LCL			//0119	<-	writeReturn	<-	Main
+		D=M			//0120	<-	writeReturn	<-	Main
+		@R13			//0121	<-	writeReturn	<-	Main
+		M=D			//0122	<-	writeReturn	<-	Main
+		@5			//0123	<-	writeReturn	<-	Main
+		A=D-A			//0124	<-	writeReturn	<-	Main
+		D=M			//0125	<-	writeReturn	<-	Main
+		@R14			//0126	<-	writeReturn	<-	Main
+		M=D			//0127	<-	writeReturn	<-	Main
+		@SP			//0128	<-	writeReturn	<-	Main
+		M=M-1			//0129	<-	writeReturn	<-	Main
+		@SP			//0130	<-	writeReturn	<-	Main
+		A=M			//0131	<-	writeReturn	<-	Main
+		D=M			//0132	<-	writeReturn	<-	Main
+		@ARG			//0133	<-	writeReturn	<-	Main
+		A=M			//0134	<-	writeReturn	<-	Main
+		M=D			//0135	<-	writeReturn	<-	Main
+		@ARG			//0136	<-	writeReturn	<-	Main
+		D=M+1			//0137	<-	writeReturn	<-	Main
+		@SP			//0138	<-	writeReturn	<-	Main
+		M=D			//0139	<-	writeReturn	<-	Main
+		@R13			//0140	<-	writeReturn	<-	Main
+		AM=M-1			//0141	<-	writeReturn	<-	Main
+		D=M			//0142	<-	writeReturn	<-	Main
+		@THAT			//0143	<-	writeReturn	<-	Main
+		M=D			//0144	<-	writeReturn	<-	Main
+		@R13			//0145	<-	writeReturn	<-	Main
+		AM=M-1			//0146	<-	writeReturn	<-	Main
+		D=M			//0147	<-	writeReturn	<-	Main
+		@THIS			//0148	<-	writeReturn	<-	Main
+		M=D			//0149	<-	writeReturn	<-	Main
+		@R13			//0150	<-	writeReturn	<-	Main
+		AM=M-1			//0151	<-	writeReturn	<-	Main
+		D=M			//0152	<-	writeReturn	<-	Main
+		@ARG			//0153	<-	writeReturn	<-	Main
+		M=D			//0154	<-	writeReturn	<-	Main
+		@R13			//0155	<-	writeReturn	<-	Main
+		AM=M-1			//0156	<-	writeReturn	<-	Main
+		D=M			//0157	<-	writeReturn	<-	Main
+		@LCL			//0158	<-	writeReturn	<-	Main
+		M=D			//0159	<-	writeReturn	<-	Main
+		@R14			//0160	<-	writeReturn	<-	Main
+		A=M			//0161	<-	writeReturn	<-	Main
+		0;JMP			//0162	<-	writeReturn	<-	Main
+	//function Class2.set 0
+//Class2.set
+		(Class2.set)			//0163	<-	writeFunction	<-	Main
+	//push argument 0
+		@ARG			//0163	<-	writePushPop	<-	Main
+		D=M			//0164	<-	writePushPop	<-	Main
+		@0			//0165	<-	writePushPop	<-	Main
+		A=D+A			//0166	<-	writePushPop	<-	Main
+		D=M			//0167	<-	writePushPop	<-	Main
+		@SP			//0168	<-	writePushPop	<-	Main
+		A=M			//0169	<-	writePushPop	<-	Main
+		M=D			//0170	<-	writePushPop	<-	Main
+		@SP			//0171	<-	writePushPop	<-	Main
+		M=M+1			//0172	<-	writePushPop	<-	Main
+	//pop static 0
+		@SP			//0173	<-	writePushPop	<-	Main
+		M=M-1			//0174	<-	writePushPop	<-	Main
+		@SP			//0175	<-	writePushPop	<-	Main
+		A=M			//0176	<-	writePushPop	<-	Main
+		D=M			//0177	<-	writePushPop	<-	Main
+		@Class2.0			//0178	<-	writePushPop	<-	Main
+		M=D			//0179	<-	writePushPop	<-	Main
+	//push argument 1
+		@ARG			//0180	<-	writePushPop	<-	Main
+		D=M			//0181	<-	writePushPop	<-	Main
+		@1			//0182	<-	writePushPop	<-	Main
+		A=D+A			//0183	<-	writePushPop	<-	Main
+		D=M			//0184	<-	writePushPop	<-	Main
+		@SP			//0185	<-	writePushPop	<-	Main
+		A=M			//0186	<-	writePushPop	<-	Main
+		M=D			//0187	<-	writePushPop	<-	Main
+		@SP			//0188	<-	writePushPop	<-	Main
+		M=M+1			//0189	<-	writePushPop	<-	Main
+	//pop static 1
+		@SP			//0190	<-	writePushPop	<-	Main
+		M=M-1			//0191	<-	writePushPop	<-	Main
+		@SP			//0192	<-	writePushPop	<-	Main
+		A=M			//0193	<-	writePushPop	<-	Main
+		D=M			//0194	<-	writePushPop	<-	Main
+		@Class2.1			//0195	<-	writePushPop	<-	Main
+		M=D			//0196	<-	writePushPop	<-	Main
+	//push constant 0
+		@0			//0197	<-	writePushPop	<-	Main
+		D=A			//0198	<-	writePushPop	<-	Main
+		@SP			//0199	<-	writePushPop	<-	Main
+		A=M			//0200	<-	writePushPop	<-	Main
+		M=D			//0201	<-	writePushPop	<-	Main
+		@SP			//0202	<-	writePushPop	<-	Main
+		M=M+1			//0203	<-	writePushPop	<-	Main
+	//return
+		@LCL			//0204	<-	writeReturn	<-	Main
+		D=M			//0205	<-	writeReturn	<-	Main
+		@R13			//0206	<-	writeReturn	<-	Main
+		M=D			//0207	<-	writeReturn	<-	Main
+		@5			//0208	<-	writeReturn	<-	Main
+		A=D-A			//0209	<-	writeReturn	<-	Main
+		D=M			//0210	<-	writeReturn	<-	Main
+		@R14			//0211	<-	writeReturn	<-	Main
+		M=D			//0212	<-	writeReturn	<-	Main
+		@SP			//0213	<-	writeReturn	<-	Main
+		M=M-1			//0214	<-	writeReturn	<-	Main
+		@SP			//0215	<-	writeReturn	<-	Main
+		A=M			//0216	<-	writeReturn	<-	Main
+		D=M			//0217	<-	writeReturn	<-	Main
+		@ARG			//0218	<-	writeReturn	<-	Main
+		A=M			//0219	<-	writeReturn	<-	Main
+		M=D			//0220	<-	writeReturn	<-	Main
+		@ARG			//0221	<-	writeReturn	<-	Main
+		D=M+1			//0222	<-	writeReturn	<-	Main
+		@SP			//0223	<-	writeReturn	<-	Main
+		M=D			//0224	<-	writeReturn	<-	Main
+		@R13			//0225	<-	writeReturn	<-	Main
+		AM=M-1			//0226	<-	writeReturn	<-	Main
+		D=M			//0227	<-	writeReturn	<-	Main
+		@THAT			//0228	<-	writeReturn	<-	Main
+		M=D			//0229	<-	writeReturn	<-	Main
+		@R13			//0230	<-	writeReturn	<-	Main
+		AM=M-1			//0231	<-	writeReturn	<-	Main
+		D=M			//0232	<-	writeReturn	<-	Main
+		@THIS			//0233	<-	writeReturn	<-	Main
+		M=D			//0234	<-	writeReturn	<-	Main
+		@R13			//0235	<-	writeReturn	<-	Main
+		AM=M-1			//0236	<-	writeReturn	<-	Main
+		D=M			//0237	<-	writeReturn	<-	Main
+		@ARG			//0238	<-	writeReturn	<-	Main
+		M=D			//0239	<-	writeReturn	<-	Main
+		@R13			//0240	<-	writeReturn	<-	Main
+		AM=M-1			//0241	<-	writeReturn	<-	Main
+		D=M			//0242	<-	writeReturn	<-	Main
+		@LCL			//0243	<-	writeReturn	<-	Main
+		M=D			//0244	<-	writeReturn	<-	Main
+		@R14			//0245	<-	writeReturn	<-	Main
+		A=M			//0246	<-	writeReturn	<-	Main
+		0;JMP			//0247	<-	writeReturn	<-	Main
+	//function Class2.get 0
+//Class2.get
+		(Class2.get)			//0248	<-	writeFunction	<-	Main
+	//push static 0
+		@Class2.0			//0248	<-	writePushPop	<-	Main
+		D=M			//0249	<-	writePushPop	<-	Main
+		@SP			//0250	<-	writePushPop	<-	Main
+		A=M			//0251	<-	writePushPop	<-	Main
+		M=D			//0252	<-	writePushPop	<-	Main
+		@SP			//0253	<-	writePushPop	<-	Main
+		M=M+1			//0254	<-	writePushPop	<-	Main
+	//push static 1
+		@Class2.1			//0255	<-	writePushPop	<-	Main
+		D=M			//0256	<-	writePushPop	<-	Main
+		@SP			//0257	<-	writePushPop	<-	Main
+		A=M			//0258	<-	writePushPop	<-	Main
+		M=D			//0259	<-	writePushPop	<-	Main
+		@SP			//0260	<-	writePushPop	<-	Main
+		M=M+1			//0261	<-	writePushPop	<-	Main
+	//sub
+		@SP			//0262	<-	writeArithmetic	<-	Main
+		M=M-1			//0263	<-	writeArithmetic	<-	Main
+		A=M			//0264	<-	writeArithmetic	<-	Main
+		D=M			//0265	<-	writeArithmetic	<-	Main
+		@R13			//0266	<-	writeArithmetic	<-	Main
+		M=D			//0267	<-	writeArithmetic	<-	Main
+		@SP			//0268	<-	writeArithmetic	<-	Main
+		A=M-1			//0269	<-	writeArithmetic	<-	Main
+		D=M			//0270	<-	writeArithmetic	<-	Main
+		@R13			//0271	<-	writeArithmetic	<-	Main
+		D=D-M			//0272	<-	writeArithmetic	<-	Main
+		@SP			//0273	<-	writeArithmetic	<-	Main
+		A=M-1			//0274	<-	writeArithmetic	<-	Main
+		M=D			//0275	<-	writeArithmetic	<-	Main
+	//return
+		@LCL			//0276	<-	writeReturn	<-	Main
+		D=M			//0277	<-	writeReturn	<-	Main
+		@R13			//0278	<-	writeReturn	<-	Main
+		M=D			//0279	<-	writeReturn	<-	Main
+		@5			//0280	<-	writeReturn	<-	Main
+		A=D-A			//0281	<-	writeReturn	<-	Main
+		D=M			//0282	<-	writeReturn	<-	Main
+		@R14			//0283	<-	writeReturn	<-	Main
+		M=D			//0284	<-	writeReturn	<-	Main
+		@SP			//0285	<-	writeReturn	<-	Main
+		M=M-1			//0286	<-	writeReturn	<-	Main
+		@SP			//0287	<-	writeReturn	<-	Main
+		A=M			//0288	<-	writeReturn	<-	Main
+		D=M			//0289	<-	writeReturn	<-	Main
+		@ARG			//0290	<-	writeReturn	<-	Main
+		A=M			//0291	<-	writeReturn	<-	Main
+		M=D			//0292	<-	writeReturn	<-	Main
+		@ARG			//0293	<-	writeReturn	<-	Main
+		D=M+1			//0294	<-	writeReturn	<-	Main
+		@SP			//0295	<-	writeReturn	<-	Main
+		M=D			//0296	<-	writeReturn	<-	Main
+		@R13			//0297	<-	writeReturn	<-	Main
+		AM=M-1			//0298	<-	writeReturn	<-	Main
+		D=M			//0299	<-	writeReturn	<-	Main
+		@THAT			//0300	<-	writeReturn	<-	Main
+		M=D			//0301	<-	writeReturn	<-	Main
+		@R13			//0302	<-	writeReturn	<-	Main
+		AM=M-1			//0303	<-	writeReturn	<-	Main
+		D=M			//0304	<-	writeReturn	<-	Main
+		@THIS			//0305	<-	writeReturn	<-	Main
+		M=D			//0306	<-	writeReturn	<-	Main
+		@R13			//0307	<-	writeReturn	<-	Main
+		AM=M-1			//0308	<-	writeReturn	<-	Main
+		D=M			//0309	<-	writeReturn	<-	Main
+		@ARG			//0310	<-	writeReturn	<-	Main
+		M=D			//0311	<-	writeReturn	<-	Main
+		@R13			//0312	<-	writeReturn	<-	Main
+		AM=M-1			//0313	<-	writeReturn	<-	Main
+		D=M			//0314	<-	writeReturn	<-	Main
+		@LCL			//0315	<-	writeReturn	<-	Main
+		M=D			//0316	<-	writeReturn	<-	Main
+		@R14			//0317	<-	writeReturn	<-	Main
+		A=M			//0318	<-	writeReturn	<-	Main
+		0;JMP			//0319	<-	writeReturn	<-	Main
+	//function Sys.init 0
+//Sys.init
+		(Sys.init)			//0320	<-	writeFunction	<-	Main
+	//push constant 6
+		@6			//0320	<-	writePushPop	<-	Main
+		D=A			//0321	<-	writePushPop	<-	Main
+		@SP			//0322	<-	writePushPop	<-	Main
+		A=M			//0323	<-	writePushPop	<-	Main
+		M=D			//0324	<-	writePushPop	<-	Main
+		@SP			//0325	<-	writePushPop	<-	Main
+		M=M+1			//0326	<-	writePushPop	<-	Main
+	//push constant 8
+		@8			//0327	<-	writePushPop	<-	Main
+		D=A			//0328	<-	writePushPop	<-	Main
+		@SP			//0329	<-	writePushPop	<-	Main
+		A=M			//0330	<-	writePushPop	<-	Main
+		M=D			//0331	<-	writePushPop	<-	Main
+		@SP			//0332	<-	writePushPop	<-	Main
+		M=M+1			//0333	<-	writePushPop	<-	Main
+	//call Class1.set 2
+		@Class1.set_FUNC_CALL3			//0334	<-	writeCall	<-	Main
+		D=A			//0335	<-	writeCall	<-	Main
+		@SP			//0336	<-	writeCall	<-	Main
+		A=M			//0337	<-	writeCall	<-	Main
+		M=D			//0338	<-	writeCall	<-	Main
+		@SP			//0339	<-	writeCall	<-	Main
+		M=M+1			//0340	<-	writeCall	<-	Main
+		@LCL			//0341	<-	writeCall	<-	Main
+		D=M			//0342	<-	writeCall	<-	Main
+		@SP			//0343	<-	writeCall	<-	Main
+		A=M			//0344	<-	writeCall	<-	Main
+		M=D			//0345	<-	writeCall	<-	Main
+		@SP			//0346	<-	writeCall	<-	Main
+		M=M+1			//0347	<-	writeCall	<-	Main
+		@ARG			//0348	<-	writeCall	<-	Main
+		D=M			//0349	<-	writeCall	<-	Main
+		@SP			//0350	<-	writeCall	<-	Main
+		A=M			//0351	<-	writeCall	<-	Main
+		M=D			//0352	<-	writeCall	<-	Main
+		@SP			//0353	<-	writeCall	<-	Main
+		M=M+1			//0354	<-	writeCall	<-	Main
+		@THIS			//0355	<-	writeCall	<-	Main
+		D=M			//0356	<-	writeCall	<-	Main
+		@SP			//0357	<-	writeCall	<-	Main
+		A=M			//0358	<-	writeCall	<-	Main
+		M=D			//0359	<-	writeCall	<-	Main
+		@SP			//0360	<-	writeCall	<-	Main
+		M=M+1			//0361	<-	writeCall	<-	Main
+		@THAT			//0362	<-	writeCall	<-	Main
+		D=M			//0363	<-	writeCall	<-	Main
+		@SP			//0364	<-	writeCall	<-	Main
+		A=M			//0365	<-	writeCall	<-	Main
+		M=D			//0366	<-	writeCall	<-	Main
+		@SP			//0367	<-	writeCall	<-	Main
+		M=M+1			//0368	<-	writeCall	<-	Main
+		@SP			//0369	<-	writeCall	<-	Main
+		D=M			//0370	<-	writeCall	<-	Main
+		@7			//0371	<-	writeCall	<-	Main
+		D=D-A			//0372	<-	writeCall	<-	Main
+		@ARG			//0373	<-	writeCall	<-	Main
+		M=D			//0374	<-	writeCall	<-	Main
+		@SP			//0375	<-	writeCall	<-	Main
+		D=M			//0376	<-	writeCall	<-	Main
+		@LCL			//0377	<-	writeCall	<-	Main
+		M=D			//0378	<-	writeCall	<-	Main
+		@Class1.set			//0379	<-	writeCall	<-	Main
+		0;JMP			//0380	<-	writeCall	<-	Main
+		(Class1.set_FUNC_CALL3)			//0381	<-	writeCall	<-	Main
+	//pop temp 0
+		@SP			//0381	<-	writePushPop	<-	Main
+		M=M-1			//0382	<-	writePushPop	<-	Main
+		@SP			//0383	<-	writePushPop	<-	Main
+		A=M			//0384	<-	writePushPop	<-	Main
+		D=M			//0385	<-	writePushPop	<-	Main
+		@5			//0386	<-	writePushPop	<-	Main
+		M=D			//0387	<-	writePushPop	<-	Main
+	//push constant 23
+		@23			//0388	<-	writePushPop	<-	Main
+		D=A			//0389	<-	writePushPop	<-	Main
+		@SP			//0390	<-	writePushPop	<-	Main
+		A=M			//0391	<-	writePushPop	<-	Main
+		M=D			//0392	<-	writePushPop	<-	Main
+		@SP			//0393	<-	writePushPop	<-	Main
+		M=M+1			//0394	<-	writePushPop	<-	Main
+	//push constant 15
+		@15			//0395	<-	writePushPop	<-	Main
+		D=A			//0396	<-	writePushPop	<-	Main
+		@SP			//0397	<-	writePushPop	<-	Main
+		A=M			//0398	<-	writePushPop	<-	Main
+		M=D			//0399	<-	writePushPop	<-	Main
+		@SP			//0400	<-	writePushPop	<-	Main
+		M=M+1			//0401	<-	writePushPop	<-	Main
+	//call Class2.set 2
+		@Class2.set_FUNC_CALL4			//0402	<-	writeCall	<-	Main
+		D=A			//0403	<-	writeCall	<-	Main
+		@SP			//0404	<-	writeCall	<-	Main
+		A=M			//0405	<-	writeCall	<-	Main
+		M=D			//0406	<-	writeCall	<-	Main
+		@SP			//0407	<-	writeCall	<-	Main
+		M=M+1			//0408	<-	writeCall	<-	Main
+		@LCL			//0409	<-	writeCall	<-	Main
+		D=M			//0410	<-	writeCall	<-	Main
+		@SP			//0411	<-	writeCall	<-	Main
+		A=M			//0412	<-	writeCall	<-	Main
+		M=D			//0413	<-	writeCall	<-	Main
+		@SP			//0414	<-	writeCall	<-	Main
+		M=M+1			//0415	<-	writeCall	<-	Main
+		@ARG			//0416	<-	writeCall	<-	Main
+		D=M			//0417	<-	writeCall	<-	Main
+		@SP			//0418	<-	writeCall	<-	Main
+		A=M			//0419	<-	writeCall	<-	Main
+		M=D			//0420	<-	writeCall	<-	Main
+		@SP			//0421	<-	writeCall	<-	Main
+		M=M+1			//0422	<-	writeCall	<-	Main
+		@THIS			//0423	<-	writeCall	<-	Main
+		D=M			//0424	<-	writeCall	<-	Main
+		@SP			//0425	<-	writeCall	<-	Main
+		A=M			//0426	<-	writeCall	<-	Main
+		M=D			//0427	<-	writeCall	<-	Main
+		@SP			//0428	<-	writeCall	<-	Main
+		M=M+1			//0429	<-	writeCall	<-	Main
+		@THAT			//0430	<-	writeCall	<-	Main
+		D=M			//0431	<-	writeCall	<-	Main
+		@SP			//0432	<-	writeCall	<-	Main
+		A=M			//0433	<-	writeCall	<-	Main
+		M=D			//0434	<-	writeCall	<-	Main
+		@SP			//0435	<-	writeCall	<-	Main
+		M=M+1			//0436	<-	writeCall	<-	Main
+		@SP			//0437	<-	writeCall	<-	Main
+		D=M			//0438	<-	writeCall	<-	Main
+		@7			//0439	<-	writeCall	<-	Main
+		D=D-A			//0440	<-	writeCall	<-	Main
+		@ARG			//0441	<-	writeCall	<-	Main
+		M=D			//0442	<-	writeCall	<-	Main
+		@SP			//0443	<-	writeCall	<-	Main
+		D=M			//0444	<-	writeCall	<-	Main
+		@LCL			//0445	<-	writeCall	<-	Main
+		M=D			//0446	<-	writeCall	<-	Main
+		@Class2.set			//0447	<-	writeCall	<-	Main
+		0;JMP			//0448	<-	writeCall	<-	Main
+		(Class2.set_FUNC_CALL4)			//0449	<-	writeCall	<-	Main
+	//pop temp 0
+		@SP			//0449	<-	writePushPop	<-	Main
+		M=M-1			//0450	<-	writePushPop	<-	Main
+		@SP			//0451	<-	writePushPop	<-	Main
+		A=M			//0452	<-	writePushPop	<-	Main
+		D=M			//0453	<-	writePushPop	<-	Main
+		@5			//0454	<-	writePushPop	<-	Main
+		M=D			//0455	<-	writePushPop	<-	Main
+	//call Class1.get 0
+		@Class1.get_FUNC_CALL5			//0456	<-	writeCall	<-	Main
+		D=A			//0457	<-	writeCall	<-	Main
+		@SP			//0458	<-	writeCall	<-	Main
+		A=M			//0459	<-	writeCall	<-	Main
+		M=D			//0460	<-	writeCall	<-	Main
+		@SP			//0461	<-	writeCall	<-	Main
+		M=M+1			//0462	<-	writeCall	<-	Main
+		@LCL			//0463	<-	writeCall	<-	Main
+		D=M			//0464	<-	writeCall	<-	Main
+		@SP			//0465	<-	writeCall	<-	Main
+		A=M			//0466	<-	writeCall	<-	Main
+		M=D			//0467	<-	writeCall	<-	Main
+		@SP			//0468	<-	writeCall	<-	Main
+		M=M+1			//0469	<-	writeCall	<-	Main
+		@ARG			//0470	<-	writeCall	<-	Main
+		D=M			//0471	<-	writeCall	<-	Main
+		@SP			//0472	<-	writeCall	<-	Main
+		A=M			//0473	<-	writeCall	<-	Main
+		M=D			//0474	<-	writeCall	<-	Main
+		@SP			//0475	<-	writeCall	<-	Main
+		M=M+1			//0476	<-	writeCall	<-	Main
+		@THIS			//0477	<-	writeCall	<-	Main
+		D=M			//0478	<-	writeCall	<-	Main
+		@SP			//0479	<-	writeCall	<-	Main
+		A=M			//0480	<-	writeCall	<-	Main
+		M=D			//0481	<-	writeCall	<-	Main
+		@SP			//0482	<-	writeCall	<-	Main
+		M=M+1			//0483	<-	writeCall	<-	Main
+		@THAT			//0484	<-	writeCall	<-	Main
+		D=M			//0485	<-	writeCall	<-	Main
+		@SP			//0486	<-	writeCall	<-	Main
+		A=M			//0487	<-	writeCall	<-	Main
+		M=D			//0488	<-	writeCall	<-	Main
+		@SP			//0489	<-	writeCall	<-	Main
+		M=M+1			//0490	<-	writeCall	<-	Main
+		@SP			//0491	<-	writeCall	<-	Main
+		D=M			//0492	<-	writeCall	<-	Main
+		@5			//0493	<-	writeCall	<-	Main
+		D=D-A			//0494	<-	writeCall	<-	Main
+		@ARG			//0495	<-	writeCall	<-	Main
+		M=D			//0496	<-	writeCall	<-	Main
+		@SP			//0497	<-	writeCall	<-	Main
+		D=M			//0498	<-	writeCall	<-	Main
+		@LCL			//0499	<-	writeCall	<-	Main
+		M=D			//0500	<-	writeCall	<-	Main
+		@Class1.get			//0501	<-	writeCall	<-	Main
+		0;JMP			//0502	<-	writeCall	<-	Main
+		(Class1.get_FUNC_CALL5)			//0503	<-	writeCall	<-	Main
+	//call Class2.get 0
+		@Class2.get_FUNC_CALL6			//0503	<-	writeCall	<-	Main
+		D=A			//0504	<-	writeCall	<-	Main
+		@SP			//0505	<-	writeCall	<-	Main
+		A=M			//0506	<-	writeCall	<-	Main
+		M=D			//0507	<-	writeCall	<-	Main
+		@SP			//0508	<-	writeCall	<-	Main
+		M=M+1			//0509	<-	writeCall	<-	Main
+		@LCL			//0510	<-	writeCall	<-	Main
+		D=M			//0511	<-	writeCall	<-	Main
+		@SP			//0512	<-	writeCall	<-	Main
+		A=M			//0513	<-	writeCall	<-	Main
+		M=D			//0514	<-	writeCall	<-	Main
+		@SP			//0515	<-	writeCall	<-	Main
+		M=M+1			//0516	<-	writeCall	<-	Main
+		@ARG			//0517	<-	writeCall	<-	Main
+		D=M			//0518	<-	writeCall	<-	Main
+		@SP			//0519	<-	writeCall	<-	Main
+		A=M			//0520	<-	writeCall	<-	Main
+		M=D			//0521	<-	writeCall	<-	Main
+		@SP			//0522	<-	writeCall	<-	Main
+		M=M+1			//0523	<-	writeCall	<-	Main
+		@THIS			//0524	<-	writeCall	<-	Main
+		D=M			//0525	<-	writeCall	<-	Main
+		@SP			//0526	<-	writeCall	<-	Main
+		A=M			//0527	<-	writeCall	<-	Main
+		M=D			//0528	<-	writeCall	<-	Main
+		@SP			//0529	<-	writeCall	<-	Main
+		M=M+1			//0530	<-	writeCall	<-	Main
+		@THAT			//0531	<-	writeCall	<-	Main
+		D=M			//0532	<-	writeCall	<-	Main
+		@SP			//0533	<-	writeCall	<-	Main
+		A=M			//0534	<-	writeCall	<-	Main
+		M=D			//0535	<-	writeCall	<-	Main
+		@SP			//0536	<-	writeCall	<-	Main
+		M=M+1			//0537	<-	writeCall	<-	Main
+		@SP			//0538	<-	writeCall	<-	Main
+		D=M			//0539	<-	writeCall	<-	Main
+		@5			//0540	<-	writeCall	<-	Main
+		D=D-A			//0541	<-	writeCall	<-	Main
+		@ARG			//0542	<-	writeCall	<-	Main
+		M=D			//0543	<-	writeCall	<-	Main
+		@SP			//0544	<-	writeCall	<-	Main
+		D=M			//0545	<-	writeCall	<-	Main
+		@LCL			//0546	<-	writeCall	<-	Main
+		M=D			//0547	<-	writeCall	<-	Main
+		@Class2.get			//0548	<-	writeCall	<-	Main
+		0;JMP			//0549	<-	writeCall	<-	Main
+		(Class2.get_FUNC_CALL6)			//0550	<-	writeCall	<-	Main
+	//label WHILE
+		(Sys.init$WHILE)			//0550	<-	writeLabel	<-	Main
+	//goto WHILE
+		@Sys.init$WHILE			//0550	<-	writeGoto	<-	Main
+		0;JMP			//0551	<-	writeGoto	<-	Main

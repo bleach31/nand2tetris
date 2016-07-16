@@ -25,7 +25,9 @@ namespace VMtranslator
 			//vmfiles.Add(@"C:\Users\c2010\Documents\git\nand2tetris\projects\08\ProgramFlow\BasicLoop\BasicLoop.vm");
 			//vmfiles.Add(@"C:\Users\c2010\Documents\git\nand2tetris\projects\08\ProgramFlow\FibonacciSeries\FibonacciSeries.vm");
 
-			String dir = @"C:\github\nand2tetris\projects\08\FunctionCalls\StaticsTest";
+			//String dir = @"C:\github\nand2tetris\projects\08\FunctionCalls\StaticsTest";
+			String dir = @"C:\Users\c2010\Documents\git\nand2tetris\projects\08\FunctionCalls\FibonacciElement";
+			
 			//指定フォルダのvmファイルを全部とってくる。サブフォルダはみない。
 			string[] files = System.IO.Directory.GetFiles(dir, "*.vm", System.IO.SearchOption.TopDirectoryOnly);
 			
@@ -49,6 +51,9 @@ namespace VMtranslator
 
 				while (prs.hasMoreCommands())
 				{
+#if DEBUG
+					cw.m_file_writer.WriteLine("\t//"+prs.line);
+#endif
 					switch (prs.commandtype)
 					{
 						case Parser.CommandTypes.C_ARITHMETIC:
