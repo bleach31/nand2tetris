@@ -7,6 +7,7 @@ using System.Threading.Tasks;
 
 namespace VMtranslator
 {
+
 	class Program
 	{
 		static void Main(string[] args)
@@ -26,7 +27,26 @@ namespace VMtranslator
 			//vmfiles.Add(@"C:\Users\c2010\Documents\git\nand2tetris\projects\08\ProgramFlow\FibonacciSeries\FibonacciSeries.vm");
 
 			//String dir = @"C:\github\nand2tetris\projects\08\FunctionCalls\StaticsTest";
-			String dir = @"C:\Users\c2010\Documents\git\nand2tetris\projects\08\FunctionCalls\FibonacciElement";
+
+			String dir = @"C:\github\nand2tetris\projects\07\Pong";
+			Console.Write("input dir:");
+			String input = Console.ReadLine();
+			if (input != "")
+			{
+				dir = input;
+			}
+
+			Console.Write("comment output?[y/n]:");
+			input = Console.ReadLine();
+
+
+			if (input == "n" || input == "N")
+			{
+				VMtranslator.Properties.Settings.Default.debugmode = false;
+			}
+
+
+			//@"";
 			
 			//指定フォルダのvmファイルを全部とってくる。サブフォルダはみない。
 			string[] files = System.IO.Directory.GetFiles(dir, "*.vm", System.IO.SearchOption.TopDirectoryOnly);
@@ -51,9 +71,10 @@ namespace VMtranslator
 
 				while (prs.hasMoreCommands())
 				{
-#if DEBUG
-					cw.m_file_writer.WriteLine("\t//"+prs.line);
-#endif
+					if (VMtranslator.Properties.Settings.Default.debugmode)
+					{
+						cw.m_file_writer.WriteLine("\t//" + prs.line);
+					}
 					switch (prs.commandtype)
 					{
 						case Parser.CommandTypes.C_ARITHMETIC:

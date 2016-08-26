@@ -501,15 +501,17 @@ namespace VMtranslator
 			StackFrame callerFrame = new StackFrame(1);
 			string methodName1 = callerFrame.GetMethod().Name;
 
-			callerFrame = new StackFrame(2);
-			string methodName2 = callerFrame.GetMethod().Name;
-
 			//書き込み
-#if DEBUG
-			m_file_writer.Write("\t\t");
-#endif
 
-			m_file_writer.WriteLine(line + "\t\t\t//{0:d4}\t<-\t" + methodName1 + "\t<-\t"+ methodName2,romRowNum);
+			if (VMtranslator.Properties.Settings.Default.debugmode)
+			{
+				m_file_writer.WriteLine("\t\t" + line + "\t\t\t//{0:d4}\t<-\t" + methodName1);
+			}
+			else
+			{
+				m_file_writer.WriteLine(line);
+			}
+
 
 			//L令ならROM行数カウントアップしない
 			Regex r = new Regex(@"^\(([^;=\(\)]+)\)$");
